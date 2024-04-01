@@ -15,7 +15,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PeopleIcon from "@mui/icons-material/People";
 import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
-// import JobTracker from "./JobTracker";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
