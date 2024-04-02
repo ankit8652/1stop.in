@@ -20,6 +20,8 @@ import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutl
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import LinkedIn from "./LinkedIn";
+import Documents from "./Documents";
 
 const drawerWidth = 240;
 
@@ -80,7 +82,7 @@ export default function Layout() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Dashboard />
+        <Documents />
       </Box>
     </Box>
   );
