@@ -14,7 +14,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PeopleIcon from "@mui/icons-material/People";
 import Navbar from "./Navbar";
-// import Dashboard from "./Dashboard";
+import Dashboard from "./Dashboard";
 import LinkedIn from "./LinkedIn";
 // import JobTracker from "./JobTracker";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
@@ -81,7 +81,8 @@ export default function Layout() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <LinkedIn />
+        {/* <LinkedIn /> */}
+        <Dashboard />
       </Box>
     </Box>
   );
