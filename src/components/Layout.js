@@ -14,13 +14,14 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PeopleIcon from "@mui/icons-material/People";
 import Navbar from "./Navbar";
-import Dashboard from "./Dashboard";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Dashboard from "./Dashboard";
+import Contacts from "./Contacts";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import LinkedIn from "./LinkedIn";
+// import LinkedIn from "./LinkedIn";
 import Documents from "./Documents";
 
 const drawerWidth = 240;
@@ -82,7 +83,7 @@ export default function Layout() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Documents />
+        <Contacts />
       </Box>
     </Box>
   );
