@@ -106,7 +106,7 @@ export default function Layout() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/job-tracker" element={<JobTracker />} />
             <Route path="/resume-builder" element={<ResumeBuilder />} />
             <Route path="/contacts" element={<Contacts />} />
