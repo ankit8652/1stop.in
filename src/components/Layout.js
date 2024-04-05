@@ -16,7 +16,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 import LinkedIn from "./LinkedIn";
-// import JobTracker from "./JobTracker";
+import JobTracker from "./JobTracker";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
@@ -82,7 +82,8 @@ export default function Layout() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         {/* <LinkedIn /> */}
-        <Dashboard />
+        {/* <Dashboard /> */}
+        <JobTracker />
       </Box>
     </Box>
   );
