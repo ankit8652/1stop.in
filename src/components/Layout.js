@@ -15,6 +15,9 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PeopleIcon from "@mui/icons-material/People";
 import Navbar from "./Navbar";
+import Dashboard from "./Dashboard";
+import LinkedIn from "./LinkedIn";
+import JobTracker from "./JobTracker";
 import Contacts from "./Contacts";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
@@ -114,6 +117,13 @@ export default function Layout() {
             <Route path="/linkedin" element={<LinkedIn />} />
           </Routes>
         </Box>
+      </Drawer>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar />
+        {/* <LinkedIn /> */}
+        {/* <Dashboard /> */}
+        <JobTracker />
+
       </Box>
     </BrowserRouter>
   );
