@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import AppBar from "@mui/material/AppBar";
@@ -17,66 +18,104 @@ import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 import LinkedIn from "./LinkedIn";
 import JobTracker from "./JobTracker";
+import Contacts from "./Contacts";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import Documents from "./Documents";
+import JobTracker from "./JobTracker";
+import Dashboard from "./Dashboard";
+import ResumeBuilder from "./ResumeBuilder";
+import LinkedIn from "./LinkedIn";
 
 const drawerWidth = 240;
 
 export default function Layout() {
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      >
-        <Navbar />
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
+    <BrowserRouter>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        >
+          <Navbar />
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          sx={{
             width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-      >
-        <Toolbar />
-        <Box sx={{ overflow: "auto" }}>
-          <List>
-            {[
-              { text: "Dashboard", icon: <HomeOutlinedIcon /> },
-              {
-                text: "Job Tracker",
-                icon: <DashboardCustomizeOutlinedIcon />,
-              },
-              { text: "Resume Builder", icon: <InsertDriveFileOutlinedIcon /> },
-              { text: "Contacts", icon: <PermIdentityOutlinedIcon /> },
-              { text: "Documents", icon: <DescriptionOutlinedIcon /> },
-              { text: "Linkedin", icon: <LinkedInIcon /> },
-              { text: "Community", icon: <PeopleIcon /> },
-              { text: "Find Recruiters", icon: <SearchOutlinedIcon /> },
-            ].map((item, index) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton
-                  sx={{
-                    "&:hover .MuiListItemIcon-root, &:hover .MuiListItemText-root":
-                      {
-                        color: "#4285F4",
-                        transition: "color 0.3s ease", // Add transition effect
-                      },
-                  }}
-                >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+        >
+          <Toolbar />
+          <Box sx={{ overflow: "auto" }}>
+            <List>
+              {[
+                { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },
+                {
+                  text: "Job Tracker",
+                  icon: <DashboardCustomizeOutlinedIcon />,
+                  path: "/job-tracker",
+                },
+                {
+                  text: "Resume Builder",
+                  icon: <InsertDriveFileOutlinedIcon />,
+                  path: "/resume-builder",
+                },
+                {
+                  text: "Contacts",
+                  icon: <PermIdentityOutlinedIcon />,
+                  path: "/contacts",
+                },
+                {
+                  text: "Documents",
+                  icon: <DescriptionOutlinedIcon />,
+                  path: "/documents",
+                },
+                { text: "LinkedIn", icon: <LinkedInIcon />, path: "/linkedin" },
+                { text: "Community", icon: <PeopleIcon />, path: "/community" },
+                {
+                  text: "Find Recruiters",
+                  icon: <SearchOutlinedIcon />,
+                  path: "/find-recruiters",
+                },
+              ].map((item, index) => (
+                <ListItem key={item.text} disablePadding>
+                  <ListItemButton
+                    sx={{
+                      "&:hover .MuiListItemIcon-root, &:hover .MuiListItemText-root":
+                        {
+                          color: "#4285F4",
+                          transition: "color 0.3s ease",
+                        },
+                    }}
+                    component="a"
+                    href={item.path}
+                  >
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Toolbar />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/job-tracker" element={<JobTracker />} />
+            <Route path="/resume-builder" element={<ResumeBuilder />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/documents" element={<Documents />} />
+            <Route path="/linkedin" element={<LinkedIn />} />
+          </Routes>
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
@@ -84,7 +123,8 @@ export default function Layout() {
         {/* <LinkedIn /> */}
         {/* <Dashboard /> */}
         <JobTracker />
+
       </Box>
-    </Box>
+    </BrowserRouter>
   );
 }
