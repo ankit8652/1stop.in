@@ -25,6 +25,11 @@ import JobTracker from "./JobTracker";
 import Dashboard from "./Dashboard";
 import ResumeBuilder from "./ResumeBuilder";
 import LinkedIn from "./LinkedIn";
+import MockInterview from "./AI Tools/MockInterview";
+import CoverLetter from "./AI Tools/CoverLetter";
+import HeadLineGenerator from "./AI Tools/HeadLineGenerator";
+import PostGenerator from "./AI Tools/PostGenerator";
+import AboutSectionGenertor from "./AI Tools/AboutSectionGenerator";
 
 const drawerWidth = 240;
 
@@ -107,11 +112,22 @@ export default function Layout() {
           <Toolbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/job-tracker" element={<JobTracker />} />
+            <Route path="/job-tracker" element={<JobTracker isOpen={true} />} />
             <Route path="/resume-builder" element={<ResumeBuilder />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/linkedin" element={<LinkedIn />} />
+            <Route path="/mock-interview" element={<MockInterview />} />
+            <Route path="/cover-letter" element={<CoverLetter />} />
+            <Route
+              path="/linkedin-headline-generator"
+              element={<HeadLineGenerator />}
+            />
+            <Route
+              path="/linkedin-about-section-generator"
+              element={<AboutSectionGenertor />}
+            />
+            <Route path="/post-generator" element={<PostGenerator />} />
           </Routes>
         </Box>
       </Box>

@@ -12,9 +12,11 @@ import InterpreterModeIcon from "@mui/icons-material/InterpreterMode";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import PostAddOutlinedIcon from "@mui/icons-material/PostAddOutlined";
 import ViewHeadlineOutlinedIcon from "@mui/icons-material/ViewHeadlineOutlined";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate = useNavigate(); // Get the navigate function
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,8 +27,8 @@ export default function Navbar() {
   };
 
   const handleMenuItemClick = (menuItem) => {
-    console.log("Clicked on:", menuItem);
-    // Add your logic here for handling menu item clicks
+    // console.log("Clicked on:", menuItem);
+    navigate(menuItem); // Navigate to the "/mock-interview" path
     handleMenuClose();
   };
 
@@ -60,11 +62,20 @@ export default function Navbar() {
           AI Tools
         </Button>
         <Menu
+          sx={{ marginTop: "5px" }}
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right", // Adjust horizontal position here
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right", // Adjust horizontal position here
+          }}
         >
-          <MenuItem onClick={() => handleMenuItemClick("Mock Interview")}>
+          <MenuItem onClick={() => handleMenuItemClick("/mock-interview")}>
             <InterpreterModeIcon
               style={{
                 width: "35px",
@@ -76,10 +87,11 @@ export default function Navbar() {
                 borderRadius: "50%",
                 padding: 5,
               }}
+              to="/mock-interview"
             />
             Mock Interview
           </MenuItem>
-          <MenuItem onClick={() => handleMenuItemClick("Cover Letter")}>
+          <MenuItem onClick={() => handleMenuItemClick("cover-letter")}>
             <DescriptionOutlinedIcon
               style={{
                 width: "35px",
@@ -94,7 +106,7 @@ export default function Navbar() {
             />
             Cover Letter
           </MenuItem>
-          <MenuItem onClick={() => handleMenuItemClick("Post Generator")}>
+          <MenuItem onClick={() => handleMenuItemClick("post-generator")}>
             <PostAddOutlinedIcon
               style={{
                 width: "35px",
@@ -110,7 +122,7 @@ export default function Navbar() {
             Post Generator
           </MenuItem>
           <MenuItem
-            onClick={() => handleMenuItemClick("LinkedIn Headline Generator")}
+            onClick={() => handleMenuItemClick("linkedin-headline-generator")}
           >
             <ViewHeadlineOutlinedIcon
               style={{
@@ -126,7 +138,11 @@ export default function Navbar() {
             />
             LinkedIn Headline Generator
           </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          <MenuItem
+            onClick={() => {
+              handleMenuItemClick("/linkedin-about-section-generator");
+            }}
+          >
             <PostAddOutlinedIcon
               style={{
                 width: "35px",
@@ -164,6 +180,7 @@ export default function Navbar() {
             textTransform: "none",
             fontFamily: "Roboto",
             minWidth: 0, // Set minimum width to 0
+            marginLeft: "10px",
           }}
         >
           <AccountCircleRoundedIcon />
