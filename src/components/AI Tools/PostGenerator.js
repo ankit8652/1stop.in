@@ -13,7 +13,6 @@ import {
   Grid,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const PostGenerator = () => {
   const [jobDescription, setJobDescription] = useState("");
@@ -41,7 +40,7 @@ const PostGenerator = () => {
         item
         xs={6}
         style={{
-          padding: "40px",
+          padding: "30px",
         }}
       >
         <div
@@ -50,28 +49,14 @@ const PostGenerator = () => {
         >
           <div className="header">
             <Grid container alignItems="center">
-              <Grid item>
-                {/* <DescriptionOutlinedIcon
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    fontSize: "1.2rem",
-                    color: "#2196F3",
-                    marginRight: 8,
-                    backgroundColor: "#E1EDFF",
-                    borderRadius: "50%",
-                    padding: 5,
-                    alignItems: "center",
-                  }}
-                /> */}
-              </Grid>
+              <Grid item></Grid>
               <Grid item>
                 <Typography
                   variant="h5"
                   sx={{
                     marginBottom: "6px",
                     fontSize: "1.5rem",
-                    fontWeight: "700",
+                    fontWeight: "500",
                   }}
                 >
                   AI Post Generator
@@ -106,7 +91,9 @@ const PostGenerator = () => {
                 aria-controls="advanced-settings-content"
                 id="advanced-settings-header"
               >
-                <Typography variant="h6">Advanced Settings</Typography>
+                <Typography variant="p" sx={{ fontSize: "16px" }}>
+                  Advanced Settings
+                </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <FormControl
@@ -114,7 +101,9 @@ const PostGenerator = () => {
                   margin="normal"
                   sx={{ marginBottom: "10px" }}
                 >
-                  <Typography variant="h6">Additional Content</Typography>
+                  <Typography variant="p" sx={{ fontSize: "16px" }}>
+                    Additional Content
+                  </Typography>
                   <TextField
                     id="additionalContent"
                     multiline
@@ -125,8 +114,11 @@ const PostGenerator = () => {
                     margin="normal"
                     variant="outlined"
                   />
-                  <Typography variant="h6">Tone</Typography>
+                  <Typography variant="subtitle1" sx={{ fontSize: "15px" }}>
+                    Tone
+                  </Typography>
                   <RadioGroup
+                    variant="p"
                     value={tone}
                     onChange={(e) => setTone(e.target.value)}
                     row
@@ -134,49 +126,85 @@ const PostGenerator = () => {
                     <FormControlLabel
                       value="Professional"
                       control={<Radio />}
-                      label="Professional"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Professional
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Casual"
                       control={<Radio />}
-                      label="Casual"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Casual
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Enthusiastic"
                       control={<Radio />}
-                      label="Enthusiastic"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Enthusiastic
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Informational"
                       control={<Radio />}
-                      label="Informational"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Informational
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Custom"
                       control={<Radio />}
-                      label="Custom"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Custom
+                        </Typography>
+                      }
                     />
                   </RadioGroup>
-                  <Typography variant="h6">Length</Typography>
+                  <Typography variant="p" sx={{ fontSize: "15px" }}>
+                    Length
+                  </Typography>
                   <RadioGroup
+                    variant="p"
                     value={length}
                     onChange={(e) => setLength(e.target.value)}
                     row
                   >
                     <FormControlLabel
+                      variant="p"
                       value="Short"
                       control={<Radio />}
-                      label="Short"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Short
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Medium"
                       control={<Radio />}
-                      label="Medium"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Medium
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Long"
                       control={<Radio />}
-                      label="Long"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Long
+                        </Typography>
+                      }
                     />
                   </RadioGroup>
                 </FormControl>
@@ -205,7 +233,7 @@ const PostGenerator = () => {
             paddingLeft: "16px", // Add padding to separate content from the border
           }}
         >
-          {/* <Typography variant="h6">Cover Letter Preview</Typography> */}
+          {/* <Typography variant="p">Cover Letter Preview</Typography> */}
           <Typography variant="body1">{coverLetterPreview}</Typography>
         </div>
       </Grid>

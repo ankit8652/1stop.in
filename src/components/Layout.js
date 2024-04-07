@@ -112,7 +112,7 @@ export default function Layout() {
           <Toolbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/job-tracker" element={<JobTracker isOpen={true} />} />
+            <Route path="/job-tracker" element={<JobTracker />} />
             <Route path="/resume-builder" element={<ResumeBuilder />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/documents" element={<Documents />} />

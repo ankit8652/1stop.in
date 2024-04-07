@@ -1,5 +1,6 @@
 import React from "react";
 import Checklist from "./DashboardChecklist";
+import { Link } from "react-router-dom";
 import {
   Typography,
   Container,
@@ -46,7 +47,7 @@ const Dashboard = () => {
             variant="body1"
             sx={{ fontSize: "14px", marginBottom: "2%" }}
           >
-            Not sure where to start? Explore Features
+            Not sure where to start? <Link to="#">Explore Features</Link>
           </Typography>
         </Box>
 

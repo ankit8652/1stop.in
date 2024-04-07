@@ -13,7 +13,6 @@ import {
   Grid,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const CoverLetter = () => {
   const [jobDescription, setJobDescription] = useState("");
@@ -42,7 +41,7 @@ const CoverLetter = () => {
         item
         xs={6}
         style={{
-          padding: "40px",
+          padding: "30px",
         }}
       >
         <div
@@ -72,7 +71,7 @@ const CoverLetter = () => {
                   sx={{
                     marginBottom: "6px",
                     fontSize: "1.5rem",
-                    fontWeight: "700",
+                    fontWeight: "500",
                   }}
                 >
                   AI Cover Letter Generator
@@ -82,7 +81,7 @@ const CoverLetter = () => {
           </div>
           <div className="input-section" style={{ padding: "10px" }}>
             <div className="job-description-section">
-              <Typography variant="h6">Job Description</Typography>
+              <Typography variant="p">Job Description</Typography>
               <TextField
                 label="Job Description"
                 multiline
@@ -94,7 +93,7 @@ const CoverLetter = () => {
                 variant="outlined"
               />
             </div>
-            <Typography variant="h6">Job Title</Typography>
+            <Typography variant="p">Job Title</Typography>
             <TextField
               label="Job Title"
               value={jobTitle}
@@ -103,7 +102,7 @@ const CoverLetter = () => {
               margin="normal"
               variant="outlined"
             />
-            <Typography variant="h6">Company Name</Typography>
+            <Typography variant="p">Company Name</Typography>
             <TextField
               label="Company Name"
               value={companyName}
@@ -113,11 +112,12 @@ const CoverLetter = () => {
               variant="outlined"
             />
             <FormControl fullWidth margin="normal">
-              <Typography variant="h6">Your Profile</Typography>
+              <Typography variant="p">Your Profile</Typography>
               <Button
                 variant="outlined"
                 component="label"
                 htmlFor="profileResumeInput"
+                style={{ marginTop: "5px", marginBottom: "5px" }}
               >
                 {profileResume ? profileResume : "Upload your resume"}
                 <input
@@ -128,7 +128,7 @@ const CoverLetter = () => {
                   onChange={(e) => setProfileResume(e.target.files[0].name)}
                 />
               </Button>
-              <Typography variant="body2">
+              <Typography variant="subtitle1" sx={{ fontSize: "12px" }}>
                 File names cannot contain spaces or underscores and should be in
                 either .doc, .docx, or .pdf.
               </Typography>
@@ -139,7 +139,7 @@ const CoverLetter = () => {
                 aria-controls="advanced-settings-content"
                 id="advanced-settings-header"
               >
-                <Typography variant="h6">Advanced Settings</Typography>
+                <Typography variant="p">Advanced Settings</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <FormControl
@@ -147,7 +147,7 @@ const CoverLetter = () => {
                   margin="normal"
                   sx={{ marginBottom: "10px" }}
                 >
-                  <Typography variant="h6">Additional Content</Typography>
+                  <Typography variant="p">Additional Content</Typography>
                   <TextField
                     id="additionalContent"
                     multiline
@@ -158,8 +158,11 @@ const CoverLetter = () => {
                     margin="normal"
                     variant="outlined"
                   />
-                  <Typography variant="h6">Tone</Typography>
+                  <Typography variant="subtitle1" sx={{ fontSize: "16px" }}>
+                    Tone
+                  </Typography>
                   <RadioGroup
+                    variant="p"
                     value={tone}
                     onChange={(e) => setTone(e.target.value)}
                     row
@@ -167,49 +170,85 @@ const CoverLetter = () => {
                     <FormControlLabel
                       value="Professional"
                       control={<Radio />}
-                      label="Professional"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Professional
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Casual"
                       control={<Radio />}
-                      label="Casual"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Casual
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Enthusiastic"
                       control={<Radio />}
-                      label="Enthusiastic"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Enthusiastic
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Informational"
                       control={<Radio />}
-                      label="Informational"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Informational
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Custom"
                       control={<Radio />}
-                      label="Custom"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Custom
+                        </Typography>
+                      }
                     />
                   </RadioGroup>
-                  <Typography variant="h6">Length</Typography>
+                  <Typography variant="subtitle1" sx={{ fontSize: "16px" }}>
+                    Length
+                  </Typography>
                   <RadioGroup
+                    variant="p"
                     value={length}
                     onChange={(e) => setLength(e.target.value)}
                     row
                   >
                     <FormControlLabel
+                      variant="p"
                       value="Short"
                       control={<Radio />}
-                      label="Short"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Short
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Medium"
                       control={<Radio />}
-                      label="Medium"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Medium
+                        </Typography>
+                      }
                     />
                     <FormControlLabel
                       value="Long"
                       control={<Radio />}
-                      label="Long"
+                      label={
+                        <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                          Long
+                        </Typography>
+                      }
                     />
                   </RadioGroup>
                 </FormControl>
@@ -238,7 +277,7 @@ const CoverLetter = () => {
             paddingLeft: "16px", // Add padding to separate content from the border
           }}
         >
-          {/* <Typography variant="h6">Cover Letter Preview</Typography> */}
+          {/* <Typography variant="p">Cover Letter Preview</Typography> */}
           <Typography variant="body1">{coverLetterPreview}</Typography>
         </div>
       </Grid>

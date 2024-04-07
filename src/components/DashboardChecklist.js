@@ -8,7 +8,7 @@ const DashboardChecklist = () => {
       id: 1,
       title: "Download Chrome Extension",
       description:
-        "Our chrome extension is an integrated tool to help you optimize LinkedIn profile, save jobs, save contacts, generate cover letter and more.",
+        "Our chrome extension is an integrated tool to help you optimize LinkedIn profile, generate cover letter and more.",
       buttonText: "Download Now",
     },
     {
@@ -135,7 +135,7 @@ const DashboardChecklist = () => {
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ fontSize: "12px", color: "grey" }}
+                    sx={{ fontSize: "12px", color: "grey", width: "100%" }}
                   >
                     {item.description}
                   </Typography>
@@ -143,7 +143,7 @@ const DashboardChecklist = () => {
                 <Button
                   variant="text"
                   color="primary"
-                  sx={{ fontSize: "12px", width: "15%" }}
+                  sx={{ fontSize: "12px", width: "25%" }}
                 >
                   {item.buttonText}
                 </Button>

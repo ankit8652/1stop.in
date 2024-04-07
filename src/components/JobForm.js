@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/JobForm.css";
 
 const JobForm = ({
   isOpen,
@@ -43,7 +42,7 @@ const JobForm = ({
         >
           <h2
             style={{
-              fontFamily: "lexend, sans-serif",
+              fontFamily: "lexend Deca, sans-serif",
               color: "#152C5B",
             }}
           >
@@ -57,8 +56,9 @@ const JobForm = ({
                 id="jobTitle"
                 value={jobTitle}
                 onChange={(e) => setJobTitle(e.target.value)}
+                required // Adding the required attribute
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               />
@@ -70,8 +70,9 @@ const JobForm = ({
                 id="companyName"
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
+                required // Adding the required attribute
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               />
@@ -84,7 +85,7 @@ const JobForm = ({
                 value={jobUrl}
                 onChange={(e) => setJobUrl(e.target.value)}
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               />
@@ -94,9 +95,10 @@ const JobForm = ({
               <select
                 id="section"
                 value={section}
+                required
                 onChange={(e) => setSection(e.target.value)}
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               >
@@ -114,7 +116,7 @@ const JobForm = ({
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Paste or Type the Job Description here"
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                   height: 150,
                 }}
@@ -128,7 +130,7 @@ const JobForm = ({
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               />
@@ -136,7 +138,7 @@ const JobForm = ({
             <div
               className="form-note"
               style={{
-                fontFamily: "lexend, sans-serif",
+                fontFamily: "lexend Deca, sans-serif",
                 color: "#152C5B",
               }}
             >
@@ -150,7 +152,7 @@ const JobForm = ({
                 className="cancel-btn"
                 onClick={toggleForm}
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               >
@@ -160,7 +162,7 @@ const JobForm = ({
                 type="submit"
                 className="submit-btn"
                 style={{
-                  fontFamily: "lexend, sans-serif",
+                  fontFamily: "lexend Deca, sans-serif",
                   color: "#152C5B",
                 }}
               >

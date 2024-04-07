@@ -3,17 +3,9 @@ import {
   Typography,
   TextField,
   Button,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   FormControl,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
   Grid,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const HeadlineGenerator = () => {
   const [targetJobTitle, setTargetJobTitle] = useState("");
@@ -33,7 +25,7 @@ const HeadlineGenerator = () => {
         item
         xs={6}
         style={{
-          padding: "40px",
+          padding: "30px",
         }}
       >
         <div
@@ -41,7 +33,7 @@ const HeadlineGenerator = () => {
           style={{ height: "calc(100vh - 64px)", overflowY: "auto" }}
         >
           <div className="header">
-            <Grid container alignItems="center" sx={{ margin: "10px" }}>
+            <Grid container alignItems="center">
               <Grid item></Grid>
               <Grid item>
                 <Typography
@@ -49,7 +41,7 @@ const HeadlineGenerator = () => {
                   sx={{
                     marginBottom: "6px",
                     fontSize: "1.5rem",
-                    fontWeight: "700",
+                    fontWeight: "500",
                   }}
                 >
                   Headline Generator
@@ -57,8 +49,8 @@ const HeadlineGenerator = () => {
               </Grid>
             </Grid>
           </div>
-          <div className="input-section">
-            <Typography variant="h6">Target Job Title*</Typography>
+          <div className="input-section" style={{ padding: "10px" }}>
+            <Typography variant="p">Target Job Title*</Typography>
             <TextField
               label="Target Job Title"
               value={targetJobTitle}
@@ -67,7 +59,7 @@ const HeadlineGenerator = () => {
               margin="normal"
               variant="outlined"
             />
-            <Typography variant="h6">Keywords to Include</Typography>
+            <Typography variant="p">Keywords to Include</Typography>
             <TextField
               label="Keywords to Include"
               value={keywords}
@@ -77,11 +69,12 @@ const HeadlineGenerator = () => {
               variant="outlined"
             />
             <FormControl fullWidth margin="normal">
-              <Typography variant="h6">Resume Upload</Typography>
+              <Typography variant="p">Resume Upload</Typography>
               <Button
                 variant="outlined"
                 component="label"
                 htmlFor="resumeInput"
+                sx={{ marginTop: "5px", marginBottom: "5px" }}
               >
                 {resume ? resume : "Upload your resume"}
                 <input
@@ -93,18 +86,14 @@ const HeadlineGenerator = () => {
                 />
               </Button>
             </FormControl>
-            <FormControl fullWidth margin="normal">
-              <Typography variant="h6">Use LinkedIn Profile</Typography>
-              <FormControlLabel
-                control={
-                  <Radio
-                    checked={useLinkedin}
-                    onChange={(e) => setUseLinkedin(e.target.checked)}
-                  />
-                }
-                label="Yes"
-              />
-            </FormControl>
+            <FormControl
+              fullWidth
+              margin="normal"
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            ></FormControl>
           </div>
           <Button
             variant="contained"

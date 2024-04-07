@@ -1,6 +1,9 @@
-import { Typography, TextField, Button } from "@material-ui/core";
 import React, { useState } from "react";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
 import JobForm from "./JobForm";
+import { Typography, TextField, Button } from "@material-ui/core";
+import "../styles/JobTracker.css";
 
 const JobTracker = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,21 +57,43 @@ const JobTracker = () => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            fontFamily: "lexend, sans-serif",
             color: "#152C5B",
           }}
         >
           <Typography variant="h5">
-            <strong>My 2024 Job Search</strong>
+            <strong>My {new Date().getFullYear()} Job Search</strong>
           </Typography>
           <div style={{ display: "flex", padding: "0.2%", gap: "20px" }}>
             <div>
-              <TextField placeholder="Search" style={{ width: "200px" }} />
+              <TextField
+                label="Search"
+                size="small"
+                variant="outlined"
+                fullWidth
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <SearchIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                sx={{ marginBottom: "20px", width: "30%" }} // Adjusted height
+              />
             </div>
             <div>
-              <Button variant="contained" color="primary" onClick={toggleForm}>
+              <Button
+                variant="contained"
+                size="small"
+                style={{
+                  backgroundColor: "#4C88E2",
+                  color: "#000000",
+                  height: "40px",
+                }}
+                onClick={toggleForm}
+              >
                 Add Job
               </Button>
+
               <JobForm
                 isOpen={isOpen}
                 toggleForm={toggleForm}

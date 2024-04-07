@@ -13,6 +13,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import PostAddOutlinedIcon from "@mui/icons-material/PostAddOutlined";
 import ViewHeadlineOutlinedIcon from "@mui/icons-material/ViewHeadlineOutlined";
 import { useNavigate } from "react-router-dom";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -55,11 +56,11 @@ export default function Navbar() {
             border: "1px solid #FFF",
             fontWeight: "bold",
             textTransform: "none",
-            fontFamily: "Roboto",
             minWidth: 0,
           }}
         >
           AI Tools
+          <KeyboardArrowDownIcon />
         </Button>
         <Menu
           sx={{ marginTop: "5px" }}
@@ -83,7 +84,7 @@ export default function Navbar() {
                 fontSize: "1.5rem",
                 color: "#2196F3",
                 marginRight: 8,
-                backgroundColor: "#E1EDFF",
+                backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
                 padding: 5,
               }}
@@ -99,7 +100,7 @@ export default function Navbar() {
                 fontSize: "1.5rem",
                 color: "#2196F3",
                 marginRight: 8,
-                backgroundColor: "#E1EDFF",
+                backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
                 padding: 5,
               }}
@@ -114,7 +115,7 @@ export default function Navbar() {
                 fontSize: "1.5rem",
                 color: "#2196F3",
                 marginRight: 8,
-                backgroundColor: "#E1EDFF",
+                backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
                 padding: 5,
               }}
@@ -131,7 +132,7 @@ export default function Navbar() {
                 fontSize: "1.5rem",
                 color: "#2196F3",
                 marginRight: 8,
-                backgroundColor: "#E1EDFF",
+                backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
                 padding: 5,
               }}
@@ -150,7 +151,7 @@ export default function Navbar() {
                 fontSize: "1.5rem",
                 color: "#2196F3",
                 marginRight: 8,
-                backgroundColor: "#E1EDFF",
+                backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
                 padding: 5,
               }}
@@ -164,9 +165,9 @@ export default function Navbar() {
           style={{
             fontWeight: "bold",
             textTransform: "none",
-            fontFamily: "Roboto",
             minWidth: 0,
-            marginLeft: 10,
+            marginLeft: "30px",
+            marginRight: "30px",
           }}
         >
           Upgrade to Premium
@@ -178,11 +179,18 @@ export default function Navbar() {
             "&:hover": { backgroundColor: "#E1EDFF" },
             fontWeight: "bold",
             textTransform: "none",
-            fontFamily: "Roboto",
-            minWidth: 0, // Set minimum width to 0
-            marginLeft: "10px",
+            minWidth: 0,
+            padding: "6px", // Adjust padding
+            borderRadius: "5px", // Add border radius
+            marginLeft: "5px",
           }}
         >
+          <Typography
+            variant="body1"
+            style={{ marginLeft: "5px", paddingRight: "5px" }}
+          >
+            Profile
+          </Typography>
           <AccountCircleRoundedIcon />
         </IconButton>
       </Toolbar>

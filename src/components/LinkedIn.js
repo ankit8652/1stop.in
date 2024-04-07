@@ -1,39 +1,18 @@
 import React from "react";
+import "../styles/LinkedIn.css";
 
 const LinkedIn = () => {
-  const headerStyle = {
-    display: "flex",
-    flexDirection: "row",
-    borderBottom: "1px solid rgb(216, 215, 215)",
-  };
-
-  const bottomStyle = {
-    fontSize: "0.8rem",
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    padding: "30px",
-  };
-
-  const bottomTextStyle = {
-    // width: "100%",
-    textAlign: "center",
-    fontSize: "0.9rem",
-  };
-
   return (
     <>
       <div className="linkedin-container">
-        <div style={headerStyle} className="linkedin-header">
+        <div className="linkedin-header">
           <h2>LinkedIn</h2>
-          <h4 style={{ marginLeft: "10px" }}>
+        </div>
+        <div className="linkedin-bottom">
+          <h2>
             LinkedIn Profile not linked to Careerflow. Here is how you can link
             your profile.
-          </h4>
-        </div>
-        <div style={bottomStyle} className="linkedin-bottom">
+          </h2>
           <iframe
             width="560"
             height="315"
@@ -44,7 +23,7 @@ const LinkedIn = () => {
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
-          <div style={bottomTextStyle} className="linkedin-bottom-text">
+          <div className="linkedin-bottom-text">
             <p>
               Note: For updating the LinkedIn profile with Careerflow. Go to
               your LinkedIn profile page, find the Careerflow Icon and link

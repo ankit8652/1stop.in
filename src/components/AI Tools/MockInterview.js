@@ -33,8 +33,7 @@ function MockInterview() {
           </div>
           <img
             src="https://app.careerflow.ai/static/media/mock_interview_hero.94b2adcd331626a11ffb.png"
-            width={"600px"}
-            alt=""
+            width={"50%"}
           />
         </div>
         <div
@@ -47,8 +46,8 @@ function MockInterview() {
           <h2>View an AI Mock Interview in action</h2>
           <div style={{ borderRadius: "15px", overflow: "hidden" }}>
             <iframe
-              width="700"
-              height="300"
+              width="600px"
+              height="300px"
               src="https://www.youtube.com/embed/hNr1a2MC91k?si=btZOGjHpWAms19x-"
               title="YouTube video player"
               frameborder="0"
@@ -77,16 +76,16 @@ function MockInterview() {
         <div
           style={{
             display: "flex",
+            textAlign: "center",
             alignItems: "center",
-            padding: "0 14%",
-            gap: "2%",
+            padding: "0 10%",
+            gap: "5%",
           }}
         >
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_select_role.30537f016bbaeecd5b5c.png"
-              width={"600px"}
-              alt=""
+              width={"80%"}
             />
           </div>
           <div>
@@ -102,8 +101,9 @@ function MockInterview() {
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "0 14%",
-            gap: "2%",
+            textAlign: "center",
+            padding: "0 10%",
+            gap: "10%",
           }}
         >
           <div>
@@ -117,8 +117,7 @@ function MockInterview() {
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_questions.6b943ee2b30d43414876.png"
-              width={"600px"}
-              alt=""
+              width={"80%"}
             />
           </div>
         </div>
@@ -126,15 +125,15 @@ function MockInterview() {
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "0 14%",
-            gap: "2%",
+            textAlign: "center",
+            padding: "0 10%",
+            gap: "5%",
           }}
         >
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_analytics.708c9b1390682bef0815.png"
-              width={"600px"}
-              alt=""
+              width={"80%"}
             />
           </div>
           <div>
@@ -152,6 +151,7 @@ function MockInterview() {
               padding: "1%",
               backgroundColor: "#508DE8",
               color: "white",
+              borderRadius: "5px",
             }}
           >
             Start Your Mock Interview!

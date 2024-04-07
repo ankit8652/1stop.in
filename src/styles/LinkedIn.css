@@ -1,0 +1,19 @@
+.linkedin-header {
+    border-bottom: 1px solid rgb(216, 215, 215);
+}
+
+.linkedin-bottom {
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.linkedin-bottom-text {
+    margin-top: 10vh;
+    width: 58%;
+    text-align: center;
+    font-size: 0.9rem;
+}
