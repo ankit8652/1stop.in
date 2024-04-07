@@ -33,6 +33,7 @@ const JobForm = ({
             borderRadius: "8px",
             boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
             zIndex: 999,
+            marginTop: "5px",
             maxHeight: "90%",
             overflowY: "auto",
             webkitScrollbar: {

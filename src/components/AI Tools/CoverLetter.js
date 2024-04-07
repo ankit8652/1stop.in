@@ -37,20 +37,26 @@ const CoverLetter = () => {
   };
 
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={6}>
+    <Grid container spacing={4} sx={{ padding: "5px" }}>
+      <Grid
+        item
+        xs={6}
+        style={{
+          padding: "40px",
+        }}
+      >
         <div
           className="left-column"
           style={{ height: "calc(100vh - 64px)", overflowY: "auto" }}
         >
           <div className="header">
-            <Grid container alignItems="center" sx={{ margin: "10px" }}>
+            <Grid container alignItems="center">
               <Grid item>
-                <DescriptionOutlinedIcon
+                {/* <DescriptionOutlinedIcon
                   style={{
                     width: "30px",
                     height: "30px",
-                    fontSize: "1.0rem",
+                    fontSize: "1.2rem",
                     color: "#2196F3",
                     marginRight: 8,
                     backgroundColor: "#E1EDFF",
@@ -58,27 +64,36 @@ const CoverLetter = () => {
                     padding: 5,
                     alignItems: "center",
                   }}
-                />
+                /> */}
               </Grid>
               <Grid item>
-                <Typography variant="h5" sx={{ marginBottom: "6px" }}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    marginBottom: "6px",
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                  }}
+                >
                   AI Cover Letter Generator
                 </Typography>
               </Grid>
             </Grid>
           </div>
-          <div className="input-section">
-            <Typography variant="h6">Job Description</Typography>
-            <TextField
-              label="Job Description"
-              multiline
-              rows={4}
-              value={jobDescription}
-              onChange={(e) => setJobDescription(e.target.value)}
-              fullWidth
-              margin="normal"
-              variant="outlined"
-            />
+          <div className="input-section" style={{ padding: "10px" }}>
+            <div className="job-description-section">
+              <Typography variant="h6">Job Description</Typography>
+              <TextField
+                label="Job Description"
+                multiline
+                rows={4}
+                value={jobDescription}
+                onChange={(e) => setJobDescription(e.target.value)}
+                fullWidth
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
             <Typography variant="h6">Job Title</Typography>
             <TextField
               label="Job Title"
@@ -201,6 +216,7 @@ const CoverLetter = () => {
               </AccordionDetails>
             </Accordion>
           </div>
+
           <Button
             variant="contained"
             color="primary"

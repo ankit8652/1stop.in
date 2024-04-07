@@ -33,7 +33,8 @@ function MockInterview() {
           </div>
           <img
             src="https://app.careerflow.ai/static/media/mock_interview_hero.94b2adcd331626a11ffb.png"
-            width={"600px"} alt=""
+            width={"600px"}
+            alt=""
           />
         </div>
         <div
@@ -84,7 +85,8 @@ function MockInterview() {
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_select_role.30537f016bbaeecd5b5c.png"
-              width={"600px"} alt=""
+              width={"600px"}
+              alt=""
             />
           </div>
           <div>
@@ -115,7 +117,8 @@ function MockInterview() {
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_questions.6b943ee2b30d43414876.png"
-              width={"600px"} alt=""
+              width={"600px"}
+              alt=""
             />
           </div>
         </div>
@@ -130,7 +133,8 @@ function MockInterview() {
           <div>
             <img
               src="https://app.careerflow.ai/static/media/mock_interview_analytics.708c9b1390682bef0815.png"
-              width={"600px"} alt=""
+              width={"600px"}
+              alt=""
             />
           </div>
           <div>

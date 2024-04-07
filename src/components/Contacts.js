@@ -71,7 +71,7 @@ const Contacts = () => {
             </InputAdornment>
           ),
         }}
-        sx={{ marginBottom: "20px", width: "30%" }}
+        sx={{ marginBottom: "20px", width: "30%" }} // Adjusted height
       />
 
       {/* Section 3 */}

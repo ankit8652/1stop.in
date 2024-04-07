@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Button, Slider, Grid } from "@mui/material";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 const DashboardChecklist = () => {
   const checklistItems = [
@@ -39,7 +40,7 @@ const DashboardChecklist = () => {
       buttonText: "Add Now",
     },
     {
-      id: 5,
+      id: 6,
       title: "Join Community",
       description:
         "Start optimizing your profile to have better chances of getting contacted by recruiters.",
@@ -71,7 +72,9 @@ const DashboardChecklist = () => {
       >
         <Grid item xs={12} sm={6}>
           <div>
-            <Typography variant="h5" sx={{ fontSize: "24px" }}>Complete your checklist</Typography>
+            <Typography variant="h5" sx={{ fontSize: "24px" }}>
+              Complete your checklist
+            </Typography>
             <Typography variant="body1" sx={{ fontSize: "14px" }}>
               Complete a few steps to land your next job.
             </Typography>
@@ -86,7 +89,9 @@ const DashboardChecklist = () => {
             spacing={2}
           >
             <Grid item>
-              <Typography variant="body1" sx={{ fontSize: "14px" }}>Steps 0/6</Typography>
+              <Typography variant="body1" sx={{ fontSize: "14px" }}>
+                Steps 0/6
+              </Typography>
             </Grid>
             <Grid item xs>
               <Slider
@@ -98,7 +103,7 @@ const DashboardChecklist = () => {
                     display: "none",
                   },
                   height: "0.4rem",
-                  borderRadius: "10px"
+                  borderRadius: "10px",
                 }}
               />
             </Grid>
@@ -118,15 +123,30 @@ const DashboardChecklist = () => {
                   backgroundColor: "white",
                   padding: "1rem",
                   borderRadius: "10px",
+                  display: "flex", // Added
+                  alignItems: "center", // Added
+                  gap: "1rem", // Added
                 }}
               >
-                <Typography variant="body1" sx={{fontStyle: "16px"}}>{item.title}</Typography>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <Typography variant="body2" sx={{ fontSize: "12px", color: "grey" }}>{item.description}</Typography>
-                  <Button variant="text" color="primary" sx={{ fontSize: "12px", width: "15%" }}>
-                    {item.buttonText}
-                  </Button>
+                <CheckCircleOutlineIcon sx={{ color: "green" }} />
+                <div>
+                  <Typography variant="body1" sx={{ fontStyle: "16px" }}>
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: "12px", color: "grey" }}
+                  >
+                    {item.description}
+                  </Typography>
                 </div>
+                <Button
+                  variant="text"
+                  color="primary"
+                  sx={{ fontSize: "12px", width: "15%" }}
+                >
+                  {item.buttonText}
+                </Button>
               </div>
             </div>
           ))}
