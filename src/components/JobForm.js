@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/JobTracker.css";
+import "../styles/JobForm.css";
 
 const JobForm = ({
   isOpen,

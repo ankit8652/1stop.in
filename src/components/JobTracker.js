@@ -1,7 +1,6 @@
 import { Typography, TextField, Button } from "@material-ui/core";
 import React, { useState } from "react";
 import JobForm from "./JobForm";
-import "../styles/JobTracker.css";
 
 const JobTracker = () => {
   const [isOpen, setIsOpen] = useState(false);

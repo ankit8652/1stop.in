@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import AppBar from "@mui/material/AppBar";
@@ -97,8 +97,8 @@ export default function Layout() {
                           transition: "color 0.3s ease",
                         },
                     }}
-                    component="a"
-                    href={item.path}
+                    component={Link} // Use Link instead of anchor tag
+                    to={item.path} // Specify the destination path
                   >
                     <ListItemIcon>{item.icon}</ListItemIcon>
                     <ListItemText primary={item.text} />
