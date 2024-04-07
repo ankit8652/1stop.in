@@ -12,7 +12,7 @@ import InterpreterModeIcon from "@mui/icons-material/InterpreterMode";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import PostAddOutlinedIcon from "@mui/icons-material/PostAddOutlined";
 import ViewHeadlineOutlinedIcon from "@mui/icons-material/ViewHeadlineOutlined";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
