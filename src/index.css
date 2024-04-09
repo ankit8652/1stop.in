@@ -6,8 +6,10 @@ body {
   font-family: "Lexend Deca", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F8FBFE;
 }
 
 code {
   font-family: "Lexend Deca", sans-serif;
+  background-color: #F8FBFE;
 }

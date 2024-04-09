@@ -56,7 +56,7 @@ export default function Layout() {
           }}
         >
           <Toolbar />
-          <Box sx={{ overflow: "auto" }}>
+          <Box sx={{ overflow: "auto", backgroundColor: "#F8FBFE" }}>
             <List>
               {[
                 { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },

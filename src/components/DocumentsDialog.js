@@ -35,7 +35,13 @@ const DocumentsDialog = ({ open, onClose, onSave }) => {
   const [description, setDescription] = useState("");
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const uploadedFile = e.target.files[0];
+    setFile(uploadedFile);
+
+    // Set the title to the name of the uploaded file
+    if (uploadedFile) {
+      setTitle(uploadedFile.name);
+    }
   };
 
   const handleSave = () => {
@@ -100,12 +106,15 @@ const DocumentsDialog = ({ open, onClose, onSave }) => {
         />
         <h3>Select Category</h3>
         <Select
-          label="Document Category"
-          variant="outlined"
+          label="Category"
+          variant="standard"
           fullWidth
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           sx={{ marginTop: 2 }}
+          inputProps={{
+            style: { color: "#000000" }, // Adjust the color as needed
+          }}
         >
           <MenuItem value="resume">Resume</MenuItem>
           <MenuItem value="portfolio">Portfolio</MenuItem>

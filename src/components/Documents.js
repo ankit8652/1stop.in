@@ -1,4 +1,3 @@
-// Documents.js
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -18,16 +17,12 @@ import DocumentItem from "./DocumentItem";
 
 const Documents = (props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [category, setCategory] = React.useState("resource");
-  const [type, setType] = React.useState("article");
+  const [category, setCategory] = useState("resource");
   const [documents, setDocuments] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleChangeCategory = (event) => {
     setCategory(event.target.value);
-  };
-
-  const handleChangeType = (event) => {
-    setType(event.target.value);
   };
 
   const handleDialogOpen = () => {
@@ -41,6 +36,13 @@ const Documents = (props) => {
   const handleSaveDocument = (document) => {
     setDocuments([...documents, document]);
   };
+
+  // Filtering documents based on the search query and selected category
+  const filteredDocuments = documents.filter(
+    (document) =>
+      document.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      (category === "resource" || document.category === category)
+  );
 
   return (
     <>
@@ -61,24 +63,6 @@ const Documents = (props) => {
         </Button>
       </div>
 
-      {/* Section 2 */}
-      {/* <div
-        style={{
-          display: "flex",
-          marginBottom: "20px",
-        }}
-      >
-        <Button variant="outlined" style={{ margin: "5px" }}>
-          All Documents
-        </Button>
-        <Button variant="outlined" style={{ margin: "5px" }}>
-          Careerflow Documents
-        </Button>
-        <Button variant="outlined" style={{ margin: "5px" }}>
-          Imported Documents
-        </Button>
-      </div> */}
-
       {/* Section 3 */}
       <div
         style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}
@@ -95,8 +79,11 @@ const Documents = (props) => {
               </InputAdornment>
             ),
           }}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          fullWidth
         />
-        <Box sx={{ minWidth: 120, margin: "10px" }}>
+        <Box sx={{ minWidth: "30%", margin: "10px" }}>
           <FormControl fullWidth>
             <InputLabel id="category-simple-select-label">Category</InputLabel>
             <Select
@@ -115,37 +102,16 @@ const Documents = (props) => {
             </Select>
           </FormControl>
         </Box>
-        <Box sx={{ minWidth: 120, margin: "10px" }}>
-          <FormControl fullWidth>
-            <InputLabel id="type-simple-select-label">Type</InputLabel>
-            <Select
-              labelId="type-simple-select-label"
-              id="demo-simple-select"
-              value={type}
-              label="type"
-              onChange={handleChangeType}
-            >
-              <MenuItem value="article">All</MenuItem>
-              <MenuItem value="resume">pdf</MenuItem>
-              <MenuItem value="cover-letter">docx</MenuItem>
-              <MenuItem value="portfolio">url</MenuItem>
-              <MenuItem value="recommendation">other</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
       </div>
 
       {/* No Documents Added */}
-      {/* Render either the list of documents or the message indicating no documents added */}
-      {documents.length > 0 ? (
-        // If documents array is not empty, render the list of documents
+      {filteredDocuments.length > 0 ? (
         <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {documents.map((document, index) => (
+          {filteredDocuments.map((document, index) => (
             <DocumentItem key={index} document={document} />
           ))}
         </div>
       ) : (
-        // If documents array is empty, render the message indicating no documents added
         <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <DocumentIcon
             sx={{ fontSize: "100px", color: blue[500], marginBottom: "10px" }}

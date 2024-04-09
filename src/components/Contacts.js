@@ -21,6 +21,7 @@ import CustomizedDialogs from "./CustomizedDialogs";
 const Contacts = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [contacts, setContacts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleDialogOpen = () => {
     setIsDialogOpen(true);
@@ -34,6 +35,11 @@ const Contacts = () => {
     setContacts([...contacts, contact]);
     setIsDialogOpen(false);
   };
+
+  // Filtering contacts based on the search query
+  const filteredContacts = contacts.filter((contact) =>
+    contact.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
@@ -71,7 +77,9 @@ const Contacts = () => {
             </InputAdornment>
           ),
         }}
-        sx={{ marginBottom: "20px", width: "30%" }} // Adjusted height
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        sx={{ marginBottom: "20px", width: "30%" }}
       />
 
       {/* Section 3 */}
@@ -86,7 +94,7 @@ const Contacts = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {contacts.length === 0 ? (
+            {filteredContacts.length === 0 ? (
               <TableRow>
                 <TableCell align="center" colSpan={4}>
                   <NoDataIcon
@@ -102,7 +110,7 @@ const Contacts = () => {
                 </TableCell>
               </TableRow>
             ) : (
-              contacts.map((contact, index) => (
+              filteredContacts.map((contact, index) => (
                 <TableRow key={index}>
                   <TableCell>{contact.fullName}</TableCell>
                   <TableCell>{contact.company}</TableCell>

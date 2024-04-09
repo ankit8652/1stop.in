@@ -83,7 +83,7 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
           <h3>Select Type</h3>
           <Select
             label="Type"
-            variant="outlined"
+            variant="standard"
             fullWidth
             required
             name="contactType"
