@@ -19,7 +19,7 @@ import Contacts from "./Contacts";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+// import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Documents from "./Documents";
 import JobTracker from "./JobTracker";
 import Dashboard from "./Dashboard";
@@ -82,11 +82,11 @@ export default function Layout() {
                 },
                 { text: "LinkedIn", icon: <LinkedInIcon />, path: "/linkedin" },
                 { text: "Community", icon: <PeopleIcon />, path: "/community" },
-                {
-                  text: "Find Recruiters",
-                  icon: <SearchOutlinedIcon />,
-                  path: "/find-recruiters",
-                },
+                // {
+                //   text: "Find Recruiters",
+                //   icon: <SearchOutlinedIcon />,
+                //   path: "/find-recruiters",
+                // },
               ].map((item, index) => (
                 <ListItem key={item.text} disablePadding>
                   <ListItemButton

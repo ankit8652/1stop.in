@@ -10,6 +10,7 @@ const ResumeBuilder = () => {
   const [openFirstModal, setOpenFirstModal] = React.useState(false);
   const [openSecondModal, setOpenSecondModal] = React.useState(false);
   const [openThirdModal, setOpenThirdModal] = React.useState(false);
+  // eslint-disable-next-line
   const [selectedFeature, setSelectedFeature] = React.useState("");
 
   // First Modal Function
@@ -369,7 +370,7 @@ const ResumeBuilder = () => {
               lineHeight: "15%",
             }}
           >
-            <img src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M28.5%2015V28.5H7.47V7.5H20.97V4.5H7.5C5.85%204.5%204.5%205.85%204.5%207.5V28.5C4.5%2030.15%205.85%2031.5%207.5%2031.5H28.5C30.15%2031.5%2031.5%2030.15%2031.5%2028.5V15H28.5ZM24.09%2011.91L25.5%2015L26.91%2011.91L30%2010.5L26.91%209.09L25.5%206L24.09%209.09L21%2010.5L24.09%2011.91ZM18%2012L16.125%2016.125L12%2018L16.125%2019.875L18%2024L19.875%2019.875L24%2018L19.875%2016.125L18%2012Z'%20fill='%23508DE8'/%3e%3c/svg%3e" />
+            <img src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M28.5%2015V28.5H7.47V7.5H20.97V4.5H7.5C5.85%204.5%204.5%205.85%204.5%207.5V28.5C4.5%2030.15%205.85%2031.5%207.5%2031.5H28.5C30.15%2031.5%2031.5%2030.15%2031.5%2028.5V15H28.5ZM24.09%2011.91L25.5%2015L26.91%2011.91L30%2010.5L26.91%209.09L25.5%206L24.09%209.09L21%2010.5L24.09%2011.91ZM18%2012L16.125%2016.125L12%2018L16.125%2019.875L18%2024L19.875%2019.875L24%2018L19.875%2016.125L18%2012Z'%20fill='%23508DE8'/%3e%3c/svg%3e"  alt=""/>
             <h2>No Resumes Yet</h2>
             <p>
               Get started on crafting your first resume to kickstart your career

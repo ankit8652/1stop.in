@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -18,7 +18,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Container from "@mui/material/Container";
 import Radio from "@mui/material/Radio";
@@ -26,14 +25,15 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import Popover from "@mui/material/Popover";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  minWidth: 1100,
-  height: 720,
+  minWidth: "90vw",
+  height: "90vh",
   overflowY: "auto",
   bgcolor: "rgb(224,237,254)",
   boxShadow: 24,
@@ -42,7 +42,8 @@ const style = {
 };
 
 export default function Navbar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [profileAnchorEl, setProfileAnchorEl] = useState(null);
   const navigate = useNavigate(); // Get the navigate function
 
   const handleMenuOpen = (event) => {
@@ -59,7 +60,25 @@ export default function Navbar() {
     handleMenuClose();
   };
 
-  const [open, setOpen] = React.useState(false);
+  const handleProfileMenuOpen = (event) => {
+    setProfileAnchorEl(event.currentTarget);
+  };
+
+  const handleProfileMenuClose = () => {
+    setProfileAnchorEl(null);
+  };
+
+  const handleManageProfile = () => {
+    // Handle Manage Profile action
+    handleProfileMenuClose();
+  };
+
+  const handleLogout = () => {
+    // Handle Logout action
+    handleProfileMenuClose();
+  };
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -437,6 +456,7 @@ export default function Navbar() {
             borderRadius: "5px", // Add border radius
             marginLeft: "5px",
           }}
+          onClick={handleProfileMenuOpen}
         >
           <Typography
             variant="body1"
@@ -446,6 +466,23 @@ export default function Navbar() {
           </Typography>
           <AccountCircleRoundedIcon />
         </IconButton>
+        <Popover
+          open={Boolean(profileAnchorEl)}
+          anchorEl={profileAnchorEl}
+          onClose={handleProfileMenuClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          style={{ marginTop: "5px" }}
+        >
+          <MenuItem onClick={handleManageProfile}>manage</MenuItem>
+          <MenuItem onClick={handleLogout}>logout</MenuItem>
+        </Popover>
       </Toolbar>
     </AppBar>
   );
