@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import JobForm from "./JobForm";
-import { Typography, TextField, Button } from "@material-ui/core";
-import "../styles/JobTracker.css";
+import { Typography, TextField, Button } from "@mui/material";
 
 const JobTracker = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +62,14 @@ const JobTracker = () => {
           <Typography variant="h5">
             <strong>My {new Date().getFullYear()} Job Search</strong>
           </Typography>
-          <div style={{ display: "flex", padding: "0.2%", gap: "20px" }}>
+          <div
+            style={{
+              display: "flex",
+              padding: "0.2%",
+              gap: "20px",
+              // width: "20%",
+            }}
+          >
             <div>
               <TextField
                 label="Search"
@@ -73,21 +79,22 @@ const JobTracker = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <SearchIcon />
+                      <SearchIcon
+                        sx={{ paddingLeft: "7px", paddingTop: "5px" }}
+                      />
                     </InputAdornment>
                   ),
                 }}
-                sx={{ marginBottom: "20px", width: "30%" }} // Adjusted height
+                sx={{ marginBottom: "20px" }}
               />
             </div>
             <div>
               <Button
-                variant="contained"
-                size="small"
+                variant="filled"
                 style={{
                   backgroundColor: "#4C88E2",
                   color: "#000000",
-                  height: "40px",
+                  width: "150px",
                 }}
                 onClick={toggleForm}
               >

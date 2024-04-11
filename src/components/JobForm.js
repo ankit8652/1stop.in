@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/JobTracker.css";
 
 const JobForm = ({
   isOpen,
@@ -144,7 +145,6 @@ const JobForm = ({
             >
               Did you know? You can save jobs directly from your Chrome
               Extension and have all data synced back in a single click?{" "}
-              <a href="#">Learn more</a>
             </div>
             <div className="form-actions">
               <button
