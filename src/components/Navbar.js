@@ -85,7 +85,7 @@ export default function Navbar() {
   return (
     <AppBar
       position="static"
-      style={{ backgroundColor: "#152C5B", height: 60 }}
+      style={{ backgroundColor: "#0058F7", height: 60 }}
     >
       <Toolbar>
         <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
@@ -100,9 +100,11 @@ export default function Navbar() {
           startIcon={<AutoAwesomeIcon style={{ marginRight: 5 }} />}
           onClick={handleMenuOpen}
           style={{
-            color: "#000",
-            backgroundColor: "#E1EDFF",
-            border: "1px solid #FFF",
+            color: "#ffffff",
+            backgroundColor: "#192243",
+            border: "1px solid #ffffff",
+            borderRadius: "2px",
+            paddingLeft: "15px",
             fontWeight: "bold",
             textTransform: "none",
             minWidth: 0,
@@ -209,7 +211,7 @@ export default function Navbar() {
           </MenuItem>
           {/* Add other menu items similarly */}
         </Menu>
-        <Button
+        {/* <Button
           variant="contained"
           style={{
             fontWeight: "bold",
@@ -221,7 +223,7 @@ export default function Navbar() {
           onClick={handleOpen}
         >
           Upgrade to Premium
-        </Button>
+        </Button> */}
 
         <Modal
           open={open}
@@ -429,7 +431,7 @@ export default function Navbar() {
                           width: "100%",
                         }}
                       >
-                        Unloack Premium Features
+                        Unlock Premium Features
                       </Button>
                     </Container>
                     <Typography variant="body2">
@@ -447,20 +449,25 @@ export default function Navbar() {
         <IconButton
           style={{
             backgroundColor: "#E1EDFF",
-            color: "#000",
+            color: "#ffffff",
             "&:hover": { backgroundColor: "#E1EDFF" },
             fontWeight: "bold",
+            // border: "1px solid #ffffff",
             textTransform: "none",
-            minWidth: 0,
+            height: "40px",
             padding: "6px", // Adjust padding
-            borderRadius: "5px", // Add border radius
-            marginLeft: "5px",
+            borderRadius: "2px", // Add border radius
+            marginLeft: "20px",
+            backgroundColor: "#192243",
           }}
           onClick={handleProfileMenuOpen}
         >
           <Typography
             variant="body1"
-            style={{ marginLeft: "5px", paddingRight: "5px" }}
+            style={{
+              marginLeft: "5px",
+              paddingRight: "5px",
+            }}
           >
             Profile
           </Typography>

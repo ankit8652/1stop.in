@@ -1,15 +1,23 @@
 /* Import the Lexend font if not already imported */
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
+
+:root {
+  --backgroundColor: #070E28;
+  --buttonColor: #192243;
+  --navbarColor: #0058F7;
+  --divColor: #192645;
+}
+
 body {
   margin: 0;
+  background-color: var(--backgroundColor);
   font-family: "Lexend Deca", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F8FBFE;
 }
 
 code {
+  background-color: var(--backgroundColor);
   font-family: "Lexend Deca", sans-serif;
-  background-color: #F8FBFE;
 }

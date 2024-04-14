@@ -60,14 +60,14 @@ const DashboardChecklist = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#141e41" }}>
       <Grid
         container
         direction="row"
         justifyContent="space-between"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "2%" }}
+        sx={{ padding: "2%", backgroundColor: "#141e41" }}
         onClick={toggleChecklist}
       >
         <Grid item xs={12} sm={6}>

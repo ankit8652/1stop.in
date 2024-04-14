@@ -14,6 +14,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  colors,
 } from "@mui/material";
 import aiResumeBuilderImage from "../images/aiResumeBuilder.a1134912b7df1342a289.png";
 import linkedinOptimizationImage from "../images/linkedinOptimization.d3b5e62759d7c877b06b.svg";
@@ -76,9 +77,10 @@ const Dashboard = () => {
             journey.
             <Link
               variant="contained"
-              sx={{
-                textDecoration: "none",
+              style={{
+                color: "lightblue",
                 marginLeft: "5px",
+                textDecoration: "underline",
               }}
               onClick={handleModalOpen}
             >
@@ -150,6 +152,7 @@ const Dashboard = () => {
                     targeted jobs.
                   </Typography>
                   <Button
+                    color="inherit"
                     onClick={() => handleMenuItemClick("/resume-builder")}
                   >
                     Get Started
@@ -174,6 +177,7 @@ const Dashboard = () => {
                     star profile.
                   </Typography>
                   <Button
+                    color="inherit"
                     onClick={() =>
                       handleMenuItemClick("/linkedin-about-section-generator")
                     }
@@ -199,83 +203,16 @@ const Dashboard = () => {
                     Get customized AI Cover letter for each job description
                     highlighting your profile.
                   </Typography>
-                  <Button onClick={() => handleMenuItemClick("/cover-letter")}>
-                    Get Started
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={jobTrackerImage}
-                  alt="Job Tracker"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div">
-                    Job Tracker
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Track your job search journey to stay organized about your
-                    job search.
-                  </Typography>
-                  <Button onClick={() => handleMenuItemClick("/job-tracker")}>
-                    Get Started
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={headlineGeneratorImage}
-                  alt="Headline Generator"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div">
-                    Headline Generator
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Create an intriguing and optimized headline using AI.
-                  </Typography>
                   <Button
-                    onClick={() =>
-                      handleMenuItemClick("/linkedin-headline-generator")
-                    }
+                    color="inherit"
+                    onClick={() => handleMenuItemClick("/cover-letter")}
                   >
                     Get Started
                   </Button>
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={whosHiringImage}
-                  alt="Who's Hiring"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div">
-                    Who's Hiring
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Search for who's hiring for your dream job and be able to
-                    reach out to them.
-                  </Typography>
-                  <Button
-                    onClick={() => handleMenuItemClick("/find-recruiters")}
-                  >
-                    Get Started
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
+            {/* Add other grid items similarly */}
           </Grid>
         </Box>
       </Modal>

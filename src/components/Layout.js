@@ -36,11 +36,16 @@ const drawerWidth = 240;
 export default function Layout() {
   return (
     <BrowserRouter>
-      <Box sx={{ display: "flex" }}>
+      <Box
+        sx={{ display: "flex", backgroundColor: "#070e28", color: "#ffffff" }}
+      >
         <CssBaseline />
         <AppBar
           position="fixed"
-          sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          sx={{
+            zIndex: (theme) => theme.zIndex.drawer + 1,
+            backgroundColor: "#070e28",
+          }}
         >
           <Navbar />
         </AppBar>
@@ -52,11 +57,13 @@ export default function Layout() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: "border-box",
+              backgroundColor: "#070e28",
+              color: "#ffffff",
             },
           }}
         >
           <Toolbar />
-          <Box sx={{ overflow: "auto", backgroundColor: "#F8FBFE" }}>
+          <Box sx={{ overflow: "auto" }}>
             <List>
               {[
                 { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },
@@ -97,10 +104,12 @@ export default function Layout() {
                           transition: "color 0.3s ease",
                         },
                     }}
-                    component={Link} // Use Link instead of anchor tag
-                    to={item.path} // Specify the destination path
+                    component={Link}
+                    to={item.path}
                   >
-                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemIcon sx={{ color: "#ffffff" }}>
+                      {item.icon}
+                    </ListItemIcon>
                     <ListItemText primary={item.text} />
                   </ListItemButton>
                 </ListItem>
