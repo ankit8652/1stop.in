@@ -133,7 +133,7 @@ export default function Navbar() {
                 width: "35px",
                 height: "35px",
                 fontSize: "1.5rem",
-                color: "#2196F3",
+                color: "#892CDC",
                 marginRight: 8,
                 backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
@@ -149,7 +149,7 @@ export default function Navbar() {
                 width: "35px",
                 height: "35px",
                 fontSize: "1.5rem",
-                color: "#2196F3",
+                color: "#892CDC",
                 marginRight: 8,
                 backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
@@ -164,7 +164,7 @@ export default function Navbar() {
                 width: "35px",
                 height: "35px",
                 fontSize: "1.5rem",
-                color: "#2196F3",
+                color: "#892CDC",
                 marginRight: 8,
                 backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
@@ -181,7 +181,7 @@ export default function Navbar() {
                 width: "35px",
                 height: "35px",
                 fontSize: "1.5rem",
-                color: "#2196F3",
+                color: "#892CDC",
                 marginRight: 8,
                 backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
@@ -200,7 +200,7 @@ export default function Navbar() {
                 width: "35px",
                 height: "35px",
                 fontSize: "1.5rem",
-                color: "#2196F3",
+                color: "#892CDC",
                 marginRight: 8,
                 backgroundColor: "#F8FBFE",
                 borderRadius: "50%",
@@ -458,7 +458,7 @@ export default function Navbar() {
             padding: "6px", // Adjust padding
             borderRadius: "2px", // Add border radius
             marginLeft: "20px",
-            backgroundColor: "#192243",
+            backgroundColor: "#892CDC",
           }}
           onClick={handleProfileMenuOpen}
         >

@@ -37,14 +37,18 @@ export default function Layout() {
   return (
     <BrowserRouter>
       <Box
-        sx={{ display: "flex", backgroundColor: "#070e28", color: "#ffffff" }}
+        sx={{
+          display: "flex",
+          backgroundColor: "var(--backgroundColor)",
+          color: "#ffffff",
+        }}
       >
         <CssBaseline />
         <AppBar
           position="fixed"
           sx={{
             zIndex: (theme) => theme.zIndex.drawer + 1,
-            backgroundColor: "#070e28",
+            backgroundColor: "var(--backgroundColor)",
           }}
         >
           <Navbar />
@@ -57,7 +61,7 @@ export default function Layout() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: "border-box",
-              backgroundColor: "#070e28",
+              backgroundColor: "var(--backgroundColor)",
               color: "#ffffff",
             },
           }}
@@ -100,7 +104,7 @@ export default function Layout() {
                     sx={{
                       "&:hover .MuiListItemIcon-root, &:hover .MuiListItemText-root":
                         {
-                          color: "#4285F4",
+                          color: "#BC6FF1",
                           transition: "color 0.3s ease",
                         },
                     }}

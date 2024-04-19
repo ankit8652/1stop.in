@@ -67,7 +67,7 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
           sx={{
             m: 0,
             p: 2,
-            bgcolor: "var(--backgroundColor)",
+            bgcolor: "var(--buttonColor)",
             color: "#fff",
           }}
           id="customized-dialog-title"
@@ -131,12 +131,14 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
             variant="outlined"
             fullWidth
             name="company"
+            required
             sx={{ marginBottom: 2 }}
           />
           <TextField
             label="Job Title"
             variant="outlined"
             fullWidth
+            required
             name="jobTitle"
             sx={{ marginBottom: 2 }}
           />
@@ -151,6 +153,7 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
             label="Email"
             variant="outlined"
             fullWidth
+            required
             type="email"
             name="email"
             sx={{ marginBottom: 2 }}
@@ -159,8 +162,13 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
             label="Phone Number"
             variant="outlined"
             fullWidth
+            required
             type="tel"
             name="phoneNumber"
+            inputProps={{
+              maxLength: 10,
+              minLength: 10,
+            }}
             sx={{ marginBottom: 2 }}
           />
           <Divider sx={{ my: 2 }} />
@@ -225,6 +233,7 @@ export default function CustomizedDialogs({ open, onClose, onSave }) {
             label="Gmail"
             variant="outlined"
             fullWidth
+            required
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">

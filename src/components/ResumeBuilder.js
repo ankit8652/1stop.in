@@ -3,15 +3,30 @@ import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import UploadIcon from "@mui/icons-material/Upload";
-import { Box, Button, Typography, Modal, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Modal,
+  TextField,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
 import UploadResume from "./UploadResume";
+import PostAddIcon from "@mui/icons-material/PostAdd";
 
 const ResumeBuilder = () => {
-  const [openFirstModal, setOpenFirstModal] = React.useState(false);
-  const [openSecondModal, setOpenSecondModal] = React.useState(false);
-  const [openThirdModal, setOpenThirdModal] = React.useState(false);
-  // eslint-disable-next-line
-  const [selectedFeature, setSelectedFeature] = React.useState("");
+  const [openFirstModal, setOpenFirstModal] = useState(false);
+  const [openSecondModal, setOpenSecondModal] = useState(false);
+  const [openThirdModal, setOpenThirdModal] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [documents, setDocuments] = useState([]);
 
   // First Modal Function
   const handleFirstModalOpen = () => setOpenFirstModal(true);
@@ -47,20 +62,21 @@ const ResumeBuilder = () => {
     // navigate to extension page
   };
 
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [documents, setDocuments] = useState([]);
   const handleDialogOpen = () => {
     setIsDialogOpen(true);
   };
+
   const handleDialogClose = () => {
     setIsDialogOpen(false);
   };
+
   const handleSaveDocument = (document) => {
     setDocuments([...documents, document]);
+    setIsDialogOpen(false);
   };
 
   return (
-    <div className="main-container" style={{ padding: 10, height: "144%" }}>
+    <div className="main-container" style={{ padding: 10 }}>
       <div className="header-container" style={{ marginBottom: "2%" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div
@@ -81,14 +97,17 @@ const ResumeBuilder = () => {
                 size="small"
                 fullWidth
                 sx={{ width: "74%" }}
-                placeholder="Search for resumes"
+                placeholder="Search"
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "4px",
+                }}
               />
             </div>
           </div>
           <div>
             <Button
               variant="contained"
-              // color="primary"
               sx={{
                 bgcolor: "var(--buttonColor)",
                 "&:hover": {
@@ -106,13 +125,11 @@ const ResumeBuilder = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  width: 900,
-                  height: 450,
-                  bgcolor: "background.paper",
+                  width: "70%",
+                  bgcolor: "#ffffff", // Light theme background color
                   boxShadow: 24,
-                  // p: 4,
-                  borderRadius: "8px",
-                  bgColor: "var(--backgroundColor)",
+                  borderRadius: "10px",
+                  // Removed bgColor property
                 }}
               >
                 <div
@@ -120,8 +137,7 @@ const ResumeBuilder = () => {
                     padding: "20px",
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "var(--backgroundColor)",
-                    color: "#fff",
+                    color: "#000000", // Light theme text color
                   }}
                 >
                   <div>
@@ -129,17 +145,12 @@ const ResumeBuilder = () => {
                       id="modal-modal-title"
                       variant="h6"
                       component="h2"
-                      sx={{ borderBottom: "1px solid #e5e7eb" }}
                     >
                       Create New Resume
                     </Typography>
                   </div>
                   <div>
-                    <Typography
-                      variant="h6"
-                      id="modal-modal-description"
-                      sx={{ mt: 2 }}
-                    >
+                    <Typography variant="h6" sx={{ mt: 2 }}>
                       How do you want to get started?
                     </Typography>
                     <Typography>
@@ -159,7 +170,7 @@ const ResumeBuilder = () => {
                       onClick={() => handleSecondModalOpen("Feature 1")}
                       className="start-from-scratch"
                       style={{
-                        backgroundColor: "var(--divColor)",
+                        backgroundColor: "#f0f0f0", // Light theme div color
                         padding: "5% 3%",
                         borderRadius: "18px",
                         width: "45%",
@@ -178,7 +189,7 @@ const ResumeBuilder = () => {
                       onClick={() => downloadExtension}
                       className="linkedin"
                       style={{
-                        backgroundColor: "var(--divColor)",
+                        backgroundColor: "#f0f0f0", // Light theme div color
                         padding: "5% 3%",
                         borderRadius: "18px",
                         width: "45%",
@@ -195,7 +206,7 @@ const ResumeBuilder = () => {
                       onClick={() => handleThirdModalOpen("Feature 3")}
                       className="upload-resume"
                       style={{
-                        backgroundColor: "var(--divColor)",
+                        backgroundColor: "#f0f0f0", // Light theme div color
                         padding: "5% 3%",
                         borderRadius: "18px",
                         width: "45%",
@@ -220,23 +231,20 @@ const ResumeBuilder = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  width: 840,
-                  height: 480,
-                  // bgcolor: "background.paper",
+                  width: "80%",
                   boxShadow: 24,
-                  // p: 4,
                   borderRadius: "8px",
                   overflowY: "auto",
-                  bgColor: "var(--backgroundColor)",
+                  bgcolor: "#ffffff", // Light theme background color
                 }}
               >
                 <div
                   style={{
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "var(--backgroundColor)",
+                    backgroundColor: "#ffffff", // Light theme background color
                     padding: "2%",
-                    color: "white",
+                    color: "#000000", // Light theme text color
                   }}
                 >
                   <div>
@@ -250,11 +258,7 @@ const ResumeBuilder = () => {
                     </Typography>
                   </div>
                   <div>
-                    <Typography
-                      variant="h6"
-                      id="modal-modal-description"
-                      sx={{ mt: 2 }}
-                    >
+                    <Typography variant="h6" sx={{ mt: 2 }}>
                       Select a professionally designed template for your resume
                     </Typography>
                     <Typography>
@@ -274,12 +278,12 @@ const ResumeBuilder = () => {
                       onClick={() => handleSecondModalOpen("Feature 3")}
                       className="upload-resume"
                       style={{
-                        backgroundColor: "#F2F4F7",
+                        backgroundColor: "#F2F4F7", // Light theme div color
                         padding: "5% 3%",
                         borderRadius: "18px",
                         width: "25%",
                         height: "90%",
-                        backgroundColor: "var(--divColor)",
+                        backgroundColor: "#f0f0f0", // Light theme div color
                       }}
                     >
                       <Typography variant="h6">Sample Resume</Typography>
@@ -292,8 +296,6 @@ const ResumeBuilder = () => {
                   sx={{
                     mt: -12,
                     ml: 2,
-                    backgroundColor: "var(--buttonColor)",
-                    color: "#fff",
                   }}
                 >
                   Previous
@@ -308,15 +310,11 @@ const ResumeBuilder = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  width: 850,
-                  height: 350,
+                  width: "80%",
                   bgcolor: "background.paper",
                   boxShadow: 24,
-                  p: 4,
-                  borderRadius: "8px",
-                  overflowY: "auto",
-                  backgroundColor: "var(--backgroundColor)",
-                  color: "#fff",
+                  p: 5,
+                  borderRadius: "10px",
                 }}
               >
                 <div style={{ width: "100%", height: "100%" }}>
@@ -362,8 +360,6 @@ const ResumeBuilder = () => {
                       justifyContent: "space-around",
                       gap: "3%",
                       marginTop: "2%",
-                      backgroundColor: "var(--divColor)",
-                      color: "#fff",
                     }}
                   >
                     <TextField
@@ -371,17 +367,10 @@ const ResumeBuilder = () => {
                       label="Search"
                       id="fullWidth"
                       size="small"
-                      style={{
-                        backgroundColor: "var(--divColor)",
-                        color: "#fff",
-                      }}
                     />
                   </div>
                 </div>
-                <Button
-                  onClick={handlePrevious}
-                  sx={{ mt: -2, bgcolor: "var(--buttonColor)", color: "#fff" }}
-                >
+                <Button onClick={handlePrevious} sx={{ mt: 2 }}>
                   Previous
                 </Button>
               </Box>
@@ -406,24 +395,42 @@ const ResumeBuilder = () => {
         <div style={{ borderBottom: "1px solid #e5e7eb", paddingLeft: "2%" }}>
           <h3>All Resumes</h3>
         </div>
-        <div style={{}}>
-          <div
-            style={{
-              transform: "translate(0%, 100%)",
-              textAlign: "center",
-              lineHeight: "15%",
-            }}
-          >
-            <img
-              src="data:image/svg+xml,%3csvg%20width='36'%20height='36'%20viewBox='0%200%2036%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M28.5%2015V28.5H7.47V7.5H20.97V4.5H7.5C5.85%204.5%204.5%205.85%204.5%207.5V28.5C4.5%2030.15%205.85%2031.5%207.5%2031.5H28.5C30.15%2031.5%2031.5%2030.15%2031.5%2028.5V15H28.5ZM24.09%2011.91L25.5%2015L26.91%2011.91L30%2010.5L26.91%209.09L25.5%206L24.09%209.09L21%2010.5L24.09%2011.91ZM18%2012L16.125%2016.125L12%2018L16.125%2019.875L18%2024L19.875%2019.875L24%2018L19.875%2016.125L18%2012Z'%20fill='%23508DE8'/%3e%3c/svg%3e"
-              alt=""
-            />
-            <h2>No Resumes Yet</h2>
-            <p>
-              Get started on crafting your first resume to kickstart your career
-              journey.
-            </p>
-          </div>
+        <div>
+          {documents.length === 0 ? (
+            <div
+              style={{
+                padding: "30px",
+                textAlign: "center",
+                lineHeight: "5px",
+              }}
+            >
+              <PostAddIcon sx={{ width: "60px", height: "60px" }} />
+              <h2>No Resumes Yet</h2>
+              <p>
+                Get started on crafting your first resume to kickstart your
+                career journey.
+              </p>
+            </div>
+          ) : (
+            <TableContainer component={Paper}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Resume Name</TableCell>
+                    <TableCell>Action</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {documents.map((document, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{document.name}</TableCell>
+                      <TableCell>Edit / Delete</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
 :root {
-  --backgroundColor: #070e28;
-  --buttonColor: #192243;
-  --navbarColor: #0058f7;
+  --backgroundColor: #000000;
+  --buttonColor: #892CDC;
+  --navbarColor: #892CDC;
   --divColor: #192645;
-  --buttonHoverColor: #1c274f;
+  --buttonHoverColor: #52057B;
 }
 
 body {

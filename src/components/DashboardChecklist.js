@@ -60,17 +60,17 @@ const DashboardChecklist = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "var(--divColor)" }}>
+    <div style={{ backgroundColor: "var(--divColor)", color: "black" }}>
       <Grid
         container
         direction="row"
         justifyContent="space-between"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "2%", backgroundColor: "var(--divColor)" }}
+        sx={{ padding: "2%" }}
         onClick={toggleChecklist}
       >
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} sx={{ color: "white" }}>
           <div>
             <Typography variant="h5" sx={{ fontSize: "24px" }}>
               Complete your checklist
@@ -89,7 +89,10 @@ const DashboardChecklist = () => {
             spacing={2}
           >
             <Grid item>
-              <Typography variant="body1" sx={{ fontSize: "14px" }}>
+              <Typography
+                variant="body1"
+                sx={{ fontSize: "14px", color: "white" }}
+              >
                 Steps 0/6
               </Typography>
             </Grid>
@@ -108,8 +111,15 @@ const DashboardChecklist = () => {
               />
             </Grid>
             <Grid item sx={{ display: "flex" }}>
-              <Typography variant="body1">{sliderValue}%</Typography>
-              <Typography variant="body1">Completed</Typography>
+              <Typography
+                variant="body1"
+                sx={{ color: "white", marginRight: "4px" }}
+              >
+                {sliderValue}%
+              </Typography>
+              <Typography variant="body1" sx={{ color: "white" }}>
+                Completed
+              </Typography>
             </Grid>
           </Grid>
         </Grid>

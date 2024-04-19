@@ -51,7 +51,11 @@ const Documents = (props) => {
         style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}
       >
         <DocumentIcon
-          sx={{ fontSize: "30px", color: blue[500], marginRight: "10px" }}
+          sx={{
+            fontSize: "30px",
+            color: "var(--buttonColor)",
+            marginRight: "10px",
+          }}
         />
         <h2 style={{ flexGrow: 1 }}>Documents</h2>
         <Button
@@ -73,30 +77,36 @@ const Documents = (props) => {
       <div
         style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}
       >
+        {/* Section 2 */}
         <TextField
-          label="Search"
+          // label="Search"
+          placeholder="Search"
           variant="outlined"
+          fullWidth
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
+                <SearchIcon />
               </InputAdornment>
             ),
           }}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          fullWidth
+          sx={{
+            marginBottom: "20px",
+            width: "60%",
+            backgroundColor: "#ffffff",
+            borderRadius: "4px",
+          }}
         />
-        <Box sx={{ minWidth: "30%", margin: "10px" }}>
+        <Box sx={{ minWidth: "30%", marginLeft: "10px" }}>
           <FormControl fullWidth>
-            <InputLabel id="category-simple-select-label">Category</InputLabel>
+            {/* <InputLabel id="category-simple-select-label", color:"white">Category</InputLabel> */}
             <Select
               labelId="category-simple-select-label"
               id="demo-simple-select"
               value={category}
-              label="category"
+              placeholder="category"
               onChange={handleChangeCategory}
             >
               <MenuItem value="resource">All</MenuItem>
@@ -120,7 +130,11 @@ const Documents = (props) => {
       ) : (
         <div style={{ textAlign: "center", marginBottom: "20px" }}>
           <DocumentIcon
-            sx={{ fontSize: "100px", color: blue[500], marginBottom: "10px" }}
+            sx={{
+              fontSize: "100px",
+              color: "var(--buttonColor)",
+              marginBottom: "10px",
+            }}
           />
           <h1>No Documents Added</h1>
           <p>

@@ -36,7 +36,7 @@ const CoverLetter = () => {
   };
 
   return (
-    <Grid container spacing={4} sx={{ padding: "5px" }}>
+    <Grid container spacing={4} sx={{ padding: "5px", fontSize: ".9em" }}>
       <Grid
         item
         xs={6}
@@ -83,7 +83,8 @@ const CoverLetter = () => {
             <div className="job-description-section">
               <Typography variant="p">Job Description</Typography>
               <TextField
-                label="Job Description"
+                placeholder="Job Description"
+                sx={{ backgroundColor: "#ffffff", borderRadius: "4px" }}
                 multiline
                 rows={4}
                 value={jobDescription}
@@ -95,7 +96,8 @@ const CoverLetter = () => {
             </div>
             <Typography variant="p">Job Title</Typography>
             <TextField
-              label="Job Title"
+              placeholder="Job Title"
+              sx={{ backgroundColor: "#ffffff", borderRadius: "4px" }}
               value={jobTitle}
               onChange={(e) => setJobTitle(e.target.value)}
               fullWidth
@@ -104,8 +106,9 @@ const CoverLetter = () => {
             />
             <Typography variant="p">Company Name</Typography>
             <TextField
-              label="Company Name"
+              placeholder="Company Name"
               value={companyName}
+              sx={{ backgroundColor: "#ffffff", borderRadius: "4px" }}
               onChange={(e) => setCompanyName(e.target.value)}
               fullWidth
               margin="normal"
@@ -258,7 +261,12 @@ const CoverLetter = () => {
 
           <Button
             variant="contained"
-            color="primary"
+            sx={{
+              backgroundColor: "var(--buttonColor)",
+              "&:hover": {
+                backgroundColor: "var(--buttonHoverColor)", // Define the color for hover off
+              },
+            }}
             onClick={handleGenerateCoverLetter}
             fullWidth
           >
@@ -272,13 +280,15 @@ const CoverLetter = () => {
           style={{
             height: "calc(100vh - 64px)",
             overflowY: "auto",
-            border: "2px solid #2196F3", // Add blue border to the left side
+            border: "1px solid #892CDC", // Add blue border to the left side
             borderRadius: "5px",
             paddingLeft: "16px", // Add padding to separate content from the border
           }}
         >
           {/* <Typography variant="p">Cover Letter Preview</Typography> */}
-          <Typography variant="body1">{coverLetterPreview}</Typography>
+          <Typography variant="body1" sx={{ padding: "40px" }}>
+            {coverLetterPreview}
+          </Typography>
         </div>
       </Grid>
     </Grid>

@@ -59,7 +59,7 @@ const JobTracker = () => {
             color: "#fff",
           }}
         >
-          <Typography variant="h5" sx={{color:"#fff"}}>
+          <Typography variant="h5" sx={{ color: "#fff" }}>
             <strong>My {new Date().getFullYear()} Job Search</strong>
           </Typography>
           <div
@@ -85,7 +85,7 @@ const JobTracker = () => {
                     </InputAdornment>
                   ),
                 }}
-                sx={{ marginBottom: "20px", }}
+                sx={{ marginBottom: "20px" }}
               />
             </div>
             <div>
@@ -93,9 +93,9 @@ const JobTracker = () => {
                 variant="filled"
                 style={{
                   backgroundColor: "var(--buttonColor)",
-            "&:hover": {
-              backgroundColor: "var(--buttonHoverColor)",
-            },
+                  "&:hover": {
+                    backgroundColor: "var(--buttonHoverColor)",
+                  },
                   color: "#fff",
                   width: "150px",
                 }}
@@ -157,16 +157,15 @@ const JobTracker = () => {
               >
                 <div
                   style={{
-                    backgroundColor: "white",
-                    borderRadius: "10px",
+                    color: "#000000",
+                    backgroundColor: "#F6F5F2",
+                    borderRadius: "5px",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-around",
-                    lineHeight: "0px",
                     padding: "0px 0px 3px 40px",
                   }}
                 >
-                  <Typography variant="h6">{job.jobTitle}</Typography>
+                  <Typography variant="body1">{job.jobTitle}</Typography>
                   <Typography>{job.companyName}</Typography>
                 </div>
               </div>

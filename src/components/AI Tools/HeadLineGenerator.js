@@ -26,6 +26,7 @@ const HeadlineGenerator = () => {
         xs={6}
         style={{
           padding: "30px",
+          fontSize: ".9em",
         }}
       >
         <div
@@ -52,7 +53,8 @@ const HeadlineGenerator = () => {
           <div className="input-section" style={{ padding: "10px" }}>
             <Typography variant="p">Target Job Title*</Typography>
             <TextField
-              label="Target Job Title"
+              placeholder="Target Job Title"
+              sx={{ backgroundColor: "white", borderRadius: "4px" }}
               value={targetJobTitle}
               onChange={(e) => setTargetJobTitle(e.target.value)}
               fullWidth
@@ -61,7 +63,8 @@ const HeadlineGenerator = () => {
             />
             <Typography variant="p">Keywords to Include</Typography>
             <TextField
-              label="Keywords to Include"
+              placeholder="Keywords to Include"
+              sx={{ backgroundColor: "white", borderRadius: "4px" }}
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
               fullWidth
@@ -100,6 +103,12 @@ const HeadlineGenerator = () => {
             color="primary"
             onClick={handleGenerateHeadline}
             fullWidth
+            sx={{
+              backgroundColor: "var(--buttonColor)",
+              "&:hover": {
+                backgroundColor: "var(--buttonHoverColor)", // Define the color for hover off
+              },
+            }}
           >
             Generate Headline
           </Button>
@@ -109,12 +118,14 @@ const HeadlineGenerator = () => {
         item
         xs={6}
         style={{
-          height: "calc(100vh - 64px)",
+          height: "calc(100vh - 74px)",
+          padding: "40px",
           overflowY: "auto",
-          border: "2px solid #2196F3", // Add blue border to the left side
+          border: "1px solid #892CDC", // Add blue border to the left side
           borderRadius: "5px",
           paddingLeft: "16px", // Add padding to separate content from the border
         }}
+        sx={{}}
       >
         {/* Preview section */}
       </Grid>

@@ -23,7 +23,7 @@ function MockInterview() {
             <span
               style={{
                 padding: "2%",
-                backgroundColor: "#508DE8",
+                backgroundColor: "var(--buttonColor)",
                 color: "white",
               }}
             >
@@ -149,7 +149,7 @@ function MockInterview() {
           <span
             style={{
               padding: "1%",
-              backgroundColor: "#508DE8",
+              backgroundColor: "var(--buttonColor)",
               color: "white",
               borderRadius: "5px",
             }}

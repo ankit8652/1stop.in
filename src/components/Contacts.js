@@ -73,7 +73,8 @@ const Contacts = () => {
 
       {/* Section 2 */}
       <TextField
-        label="Search"
+        // label="Search"
+        placeholder="Search"
         variant="outlined"
         fullWidth
         InputProps={{
@@ -85,11 +86,19 @@ const Contacts = () => {
         }}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        sx={{ marginBottom: "20px", width: "30%" }}
+        sx={{
+          marginBottom: "20px",
+          width: "30%",
+          backgroundColor: "#ffffff",
+          borderRadius: "4px",
+        }}
       />
 
       {/* Section 3 */}
-      <TableContainer component={Paper} sx={{ bgcolor: "var(--buttonColor)" }}>
+      <TableContainer
+        component={Paper}
+        sx={{ background: "transparent", border: "1px solid white" }}
+      >
         <Table size="medium">
           <TableHead>
             <TableRow>
@@ -107,7 +116,7 @@ const Contacts = () => {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody sx={{ color: "white" }}>
             {filteredContacts.length === 0 ? (
               <TableRow>
                 <TableCell align="center" colSpan={4}>
@@ -129,10 +138,18 @@ const Contacts = () => {
             ) : (
               filteredContacts.map((contact, index) => (
                 <TableRow key={index}>
-                  <TableCell>{contact.fullName}</TableCell>
-                  <TableCell>{contact.company}</TableCell>
-                  <TableCell>{contact.location}</TableCell>
-                  <TableCell>{contact.contactType}</TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    {contact.fullName}
+                  </TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    {contact.company}
+                  </TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    {contact.location}
+                  </TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    {contact.contactType}
+                  </TableCell>
                 </TableRow>
               ))
             )}

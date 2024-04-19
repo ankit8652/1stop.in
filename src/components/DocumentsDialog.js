@@ -62,7 +62,7 @@ const DocumentsDialog = ({ open, onClose, onSave }) => {
       open={open}
     >
       <DialogTitle
-        sx={{ m: 0, p: 2, bgcolor: "var(--backgroundColor)", color: "#fff" }}
+        sx={{ m: 0, p: 2, bgcolor: "var(--buttonColor)", color: "#fff" }}
         id="customized-dialog-title"
       >
         Upload Document

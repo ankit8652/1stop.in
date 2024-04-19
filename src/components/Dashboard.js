@@ -116,6 +116,7 @@ const Dashboard = () => {
             transform: "translate(-50%, -50%)",
             width: "90%",
             bgcolor: "background.paper",
+            // bgcolor:"#595B83",
             boxShadow: 24,
             p: 4,
             overflow: "auto", // Add this line
@@ -152,7 +153,6 @@ const Dashboard = () => {
                     targeted jobs.
                   </Typography>
                   <Button
-                    color="inherit"
                     onClick={() => handleMenuItemClick("/resume-builder")}
                   >
                     Get Started
@@ -177,7 +177,6 @@ const Dashboard = () => {
                     star profile.
                   </Typography>
                   <Button
-                    color="inherit"
                     onClick={() =>
                       handleMenuItemClick("/linkedin-about-section-generator")
                     }
@@ -203,16 +202,83 @@ const Dashboard = () => {
                     Get customized AI Cover letter for each job description
                     highlighting your profile.
                   </Typography>
+                  <Button onClick={() => handleMenuItemClick("/cover-letter")}>
+                    Get Started
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={jobTrackerImage}
+                  alt="Job Tracker"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="div">
+                    Job Tracker
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Track your job search journey to stay organized about your
+                    job search.
+                  </Typography>
+                  <Button onClick={() => handleMenuItemClick("/job-tracker")}>
+                    Get Started
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={headlineGeneratorImage}
+                  alt="Headline Generator"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="div">
+                    Headline Generator
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Create an intriguing and optimized headline using AI.
+                  </Typography>
                   <Button
-                    color="inherit"
-                    onClick={() => handleMenuItemClick("/cover-letter")}
+                    onClick={() =>
+                      handleMenuItemClick("/linkedin-headline-generator")
+                    }
                   >
                     Get Started
                   </Button>
                 </CardContent>
               </Card>
             </Grid>
-            {/* Add other grid items similarly */}
+            <Grid item xs={4}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={whosHiringImage}
+                  alt="Who's Hiring"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="div">
+                    Who's Hiring
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Search for who's hiring for your dream job and be able to
+                    reach out to them.
+                  </Typography>
+                  <Button
+                    onClick={() => handleMenuItemClick("/find-recruiters")}
+                  >
+                    Get Started
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Box>
       </Modal>
