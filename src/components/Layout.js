@@ -22,6 +22,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 // import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Documents from "./Documents";
 import JobTracker from "./JobTracker";
+import Login from "./Login/Login";
 import Dashboard from "./Dashboard";
 import ResumeBuilder from "./ResumeBuilder";
 import LinkedIn from "./LinkedIn";
@@ -132,6 +133,7 @@ export default function Layout() {
             <Route path="/linkedin" element={<LinkedIn />} />
             <Route path="/mock-interview" element={<MockInterview />} />
             <Route path="/cover-letter" element={<CoverLetter />} />
+            <Route path="/community" element={<Login />} />
             <Route
               path="/linkedin-headline-generator"
               element={<HeadLineGenerator />}
