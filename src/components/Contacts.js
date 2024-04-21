@@ -13,15 +13,23 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  IconButton,
 } from "@mui/material";
 import NoDataIcon from "@mui/icons-material/SentimentDissatisfied";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import CustomizedDialogs from "./CustomizedDialogs";
+import ContactDetailsDialog from "./ContactDetailsDialog";
 
 const Contacts = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [contacts, setContacts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [contactDetailsOpen, setContactDetailsOpen] = useState(false);
 
   const handleDialogOpen = () => {
     setIsDialogOpen(true);
@@ -34,6 +42,11 @@ const Contacts = () => {
   const handleSaveContact = (contact) => {
     setContacts([...contacts, contact]);
     setIsDialogOpen(false);
+  };
+
+  const handleViewDetails = (contact) => {
+    setSelectedContact(contact);
+    setContactDetailsOpen(true);
   };
 
   // Filtering contacts based on the search query
@@ -114,6 +127,9 @@ const Contacts = () => {
               <TableCell align="left" sx={{ color: "#fff" }}>
                 Relationship
               </TableCell>
+              <TableCell align="left" sx={{ color: "#fff" }}>
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ color: "white" }}>
@@ -150,6 +166,15 @@ const Contacts = () => {
                   <TableCell sx={{ color: "white" }}>
                     {contact.contactType}
                   </TableCell>
+                  <TableCell sx={{ color: "white" }}>
+                    <Button
+                      variant="outlined"
+                      onClick={() => handleViewDetails(contact)}
+                      sx={{ color: "white" }}
+                    >
+                      View Details
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))
             )}
@@ -157,11 +182,18 @@ const Contacts = () => {
         </Table>
       </TableContainer>
 
-      {/* Render the dialog */}
+      {/* Render the dialog for adding new contact */}
       <CustomizedDialogs
         open={isDialogOpen}
         onClose={handleDialogClose}
         onSave={handleSaveContact}
+      />
+
+      {/* Render the contact details dialog */}
+      <ContactDetailsDialog
+        open={contactDetailsOpen}
+        onClose={() => setContactDetailsOpen(false)}
+        contact={selectedContact}
       />
     </>
   );
