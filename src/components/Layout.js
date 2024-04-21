@@ -22,7 +22,7 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 // import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Documents from "./Documents";
 import JobTracker from "./JobTracker";
-import Login from "./Login/Login";
+// import Login from "./Login/Login";
 import Dashboard from "./Dashboard";
 import ResumeBuilder from "./ResumeBuilder";
 import LinkedIn from "./LinkedIn";
@@ -73,27 +73,27 @@ export default function Layout() {
               {[
                 { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },
                 {
-                  text: "Job Tracker",
-                  icon: <DashboardCustomizeOutlinedIcon />,
-                  path: "/job-tracker",
-                },
-                {
                   text: "Resume Builder",
                   icon: <InsertDriveFileOutlinedIcon />,
                   path: "/resume-builder",
                 },
                 {
-                  text: "Contacts",
-                  icon: <PermIdentityOutlinedIcon />,
-                  path: "/contacts",
+                  text: "Job Tracker",
+                  icon: <DashboardCustomizeOutlinedIcon />,
+                  path: "/job-tracker",
                 },
                 {
                   text: "Documents",
                   icon: <DescriptionOutlinedIcon />,
                   path: "/documents",
                 },
-                { text: "LinkedIn", icon: <LinkedInIcon />, path: "/linkedin" },
+                {
+                  text: "Contacts",
+                  icon: <PermIdentityOutlinedIcon />,
+                  path: "/contacts",
+                },
                 { text: "Community", icon: <PeopleIcon />, path: "/community" },
+                { text: "LinkedIn", icon: <LinkedInIcon />, path: "/linkedin" },
                 // {
                 //   text: "Find Recruiters",
                 //   icon: <SearchOutlinedIcon />,
@@ -125,15 +125,15 @@ export default function Layout() {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
             <Route path="/job-tracker" element={<JobTracker />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/resume-builder" element={<ResumeBuilder />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/linkedin" element={<LinkedIn />} />
             <Route path="/mock-interview" element={<MockInterview />} />
             <Route path="/cover-letter" element={<CoverLetter />} />
-            <Route path="/community" element={<Login />} />
+            {/* <Route path="/community" element={<Login />} /> */}
             <Route
               path="/linkedin-headline-generator"
               element={<HeadLineGenerator />}

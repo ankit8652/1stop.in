@@ -110,7 +110,7 @@ export default function Navbar() {
             minWidth: 0,
           }}
         >
-          AI Tools
+          Smart Tools
           <KeyboardArrowDownIcon />
         </Button>
         <Menu
@@ -141,7 +141,7 @@ export default function Navbar() {
               }}
               to="/mock-interview"
             />
-            Mock Interview
+            Interview Practice
           </MenuItem>
           <MenuItem onClick={() => handleMenuItemClick("cover-letter")}>
             <DescriptionOutlinedIcon
@@ -469,7 +469,7 @@ export default function Navbar() {
               paddingRight: "5px",
             }}
           >
-            Profile
+            Account
           </Typography>
           <AccountCircleRoundedIcon />
         </IconButton>

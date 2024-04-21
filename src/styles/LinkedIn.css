@@ -17,3 +17,26 @@
     text-align: center;
     font-size: 0.9rem;
 }
+
+.linkedin-container {
+    background-color: var(--backgroundColor);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.linkedin-header h2 {
+    margin: 0;
+    color: var(--textColor);
+}
+
+.linkedin-bottom {
+    margin-top: 20px;
+}
+
+.linkedin-bottom h2 {
+    color: var(--textColor);
+}
+
+.linkedin-bottom-text p {
+    color: var(--textColor);
+}

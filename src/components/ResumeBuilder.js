@@ -88,7 +88,7 @@ const ResumeBuilder = () => {
           >
             <h2>My Resumes</h2>
             <p>
-              Create/Edit, analyze, and organize your resumes for diverse
+              Craft, analyze, and organize your resumes for diverse
               opportunities.
             </p>
             <div style={{ paddingTop: "3%" }}>
@@ -151,11 +151,10 @@ const ResumeBuilder = () => {
                   </div>
                   <div>
                     <Typography variant="h6" sx={{ mt: 2 }}>
-                      How do you want to get started?
+                      How do you want to start?
                     </Typography>
                     <Typography>
-                      Browse styles to match your profile and aspirations. Your
-                      pick forms the base of your polished resume
+                      Choose from our templates to kickstart your resume.
                     </Typography>
                   </div>
                   <div
@@ -181,7 +180,7 @@ const ResumeBuilder = () => {
                       />
                       <Typography variant="h6">Start From Scratch</Typography>
                       <Typography>
-                        Build your resume from the ground up using our intuitive
+                        Build your resume from scratch using our intuitive
                         editor.
                       </Typography>
                     </div>
@@ -196,10 +195,9 @@ const ResumeBuilder = () => {
                       }}
                     >
                       <LinkedInIcon sx={{ fontSize: 50, color: "#508de8" }} />
-                      <Typography variant="h6">LinkedIn</Typography>
+                      <Typography variant="h6">Import LinkedIn</Typography>
                       <Typography>
-                        Import your existing LinkedIn profile to kickstart your
-                        resume.
+                        Import your LinkedIn profile to start your resume.
                       </Typography>
                     </div>
                     <div
@@ -215,8 +213,7 @@ const ResumeBuilder = () => {
                       <UploadFileIcon sx={{ fontSize: 50, color: "#508de8" }} />
                       <Typography variant="h6">Upload Resume</Typography>
                       <Typography>
-                        Upload an existing resume file to streamline the
-                        process.
+                        Upload an existing resume to streamline the process.
                       </Typography>
                     </div>
                   </div>
@@ -259,11 +256,10 @@ const ResumeBuilder = () => {
                   </div>
                   <div>
                     <Typography variant="h6" sx={{ mt: 2 }}>
-                      Select a professionally designed template for your resume
+                      Select a template for your resume
                     </Typography>
                     <Typography>
-                      Browse styles to match your profile and aspirations. Your
-                      pick forms the base of your polished resume
+                      Choose from our professionally designed templates.
                     </Typography>
                   </div>
                   <div
@@ -287,7 +283,7 @@ const ResumeBuilder = () => {
                       }}
                     >
                       <Typography variant="h6">Sample Resume</Typography>
-                      <Typography>sample resume will come over here</Typography>
+                      <Typography>A sample resume will appear here.</Typography>
                     </div>
                   </div>
                 </div>
@@ -325,7 +321,7 @@ const ResumeBuilder = () => {
                       component="h2"
                       sx={{ borderBottom: "1px solid #e5e7eb" }}
                     >
-                      By Resume
+                      Resume by Document
                     </Typography>
                   </div>
                   <div
@@ -340,7 +336,7 @@ const ResumeBuilder = () => {
                       id="modal-modal-description"
                       sx={{ mt: 2 }}
                     >
-                      Resume from your documents
+                      Use a resume from your documents
                     </Typography>
                     <Button
                       sx={{
@@ -407,8 +403,7 @@ const ResumeBuilder = () => {
               <PostAddIcon sx={{ width: "60px", height: "60px" }} />
               <h2>No Resumes Yet</h2>
               <p>
-                Get started on crafting your first resume to kickstart your
-                career journey.
+                Start crafting your first resume to begin your career journey.
               </p>
             </div>
           ) : (

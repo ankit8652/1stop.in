@@ -14,7 +14,6 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  colors,
 } from "@mui/material";
 import aiResumeBuilderImage from "../images/aiResumeBuilder.a1134912b7df1342a289.png";
 import linkedinOptimizationImage from "../images/linkedinOptimization.d3b5e62759d7c877b06b.svg";
@@ -72,9 +71,8 @@ const Dashboard = () => {
             👋 Welcome to Careerflow!
           </Typography>
           <Typography variant="body1" gutterBottom sx={{ fontSize: "14px" }}>
-            This is your hub for career insights, activities, and more. Explore
-            your personalized dashboard to stay on top of your professional
-            journey.
+            Welcome to your personalized career hub! Discover the tools and
+            resources to accelerate your professional journey.
             <Link
               variant="contained"
               style={{
@@ -116,23 +114,21 @@ const Dashboard = () => {
             transform: "translate(-50%, -50%)",
             width: "90%",
             bgcolor: "background.paper",
-            // bgcolor:"#595B83",
             boxShadow: 24,
             p: 4,
-            overflow: "auto", // Add this line
-            maxHeight: "80vh", // Add this line to limit the modal height
+            overflow: "auto",
+            maxHeight: "80vh",
           }}
         >
           <Typography id="modal-modal-title" variant="p" component="h2">
-            Explore AI Tools
+            Discover AI-powered Tools
           </Typography>
           <Typography
             id="modal-modal-description"
             sx={{ mt: 1, fontSize: "15px" }}
           >
-            Your AI Career Copilot is here. Discover the array of 1stop.in
-            features designed to streamline your job search and enhance your
-            professional journey!
+            Explore our suite of AI-driven tools designed to supercharge your
+            career growth and job search!
           </Typography>
           <Grid container spacing={2} sx={{ mt: 2 }}>
             {/* Modal Content */}
@@ -149,8 +145,8 @@ const Dashboard = () => {
                     AI Resume Builder
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Leverage the power of AI to customize your resume for
-                    targeted jobs.
+                    Use AI to create customized resumes tailored to your dream
+                    jobs.
                   </Typography>
                   <Button
                     onClick={() => handleMenuItemClick("/resume-builder")}
@@ -173,8 +169,8 @@ const Dashboard = () => {
                     LinkedIn Optimization
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Follow our expert suggestions for your profile and build a
-                    star profile.
+                    Enhance your LinkedIn profile with expert recommendations
+                    and stand out to recruiters.
                   </Typography>
                   <Button
                     onClick={() =>
@@ -196,11 +192,11 @@ const Dashboard = () => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div">
-                    Cover Letter
+                    Cover Letter Generator
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Get customized AI Cover letter for each job description
-                    highlighting your profile.
+                    Generate tailored cover letters for each job application
+                    using AI.
                   </Typography>
                   <Button onClick={() => handleMenuItemClick("/cover-letter")}>
                     Get Started
@@ -221,8 +217,8 @@ const Dashboard = () => {
                     Job Tracker
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Track your job search journey to stay organized about your
-                    job search.
+                    Keep track of your job applications and manage your job
+                    search more effectively.
                   </Typography>
                   <Button onClick={() => handleMenuItemClick("/job-tracker")}>
                     Get Started
@@ -243,7 +239,8 @@ const Dashboard = () => {
                     Headline Generator
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Create an intriguing and optimized headline using AI.
+                    Create compelling LinkedIn headlines with AI-powered
+                    assistance.
                   </Typography>
                   <Button
                     onClick={() =>
@@ -268,8 +265,8 @@ const Dashboard = () => {
                     Who's Hiring
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Search for who's hiring for your dream job and be able to
-                    reach out to them.
+                    Discover companies hiring for your dream job and connect
+                    with them directly.
                   </Typography>
                   <Button
                     onClick={() => handleMenuItemClick("/find-recruiters")}
