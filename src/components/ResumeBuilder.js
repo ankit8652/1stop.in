@@ -408,18 +408,23 @@ const ResumeBuilder = () => {
             </div>
           ) : (
             <TableContainer component={Paper}>
-              <Table>
+              <Table sx={{ color: "#ffffff", backgroundColor: "#000000" }}>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Resume Name</TableCell>
-                    <TableCell>Action</TableCell>
+                    <TableCell sx={{ color: "#ffffff" }}>Resume Name</TableCell>
+                    <TableCell sx={{ color: "#ffffff" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {documents.map((document, index) => (
                     <TableRow key={index}>
-                      <TableCell>{document.name}</TableCell>
-                      <TableCell>Edit / Delete</TableCell>
+                      <TableCell sx={{ color: "#ffffff" }}>
+                        {document.name}
+                      </TableCell>{" "}
+                      {/* Corrected */}
+                      <TableCell sx={{ color: "#ffffff" }}>
+                        Edit / Delete
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

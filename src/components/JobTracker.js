@@ -162,11 +162,14 @@ const JobTracker = () => {
                     borderRadius: "5px",
                     display: "flex",
                     flexDirection: "column",
-                    padding: "0px 0px 3px 40px",
+                    padding: "0px 0px 3px 20px",
                   }}
                 >
-                  <Typography variant="body1">{job.jobTitle}</Typography>
-                  <Typography>{job.companyName}</Typography>
+                  <Typography variant="body1">
+                    Job Title: {job.jobTitle}
+                  </Typography>
+                  <Typography>Company: {job.companyName}</Typography>
+                  <Typography>Description: {job.description}</Typography>
                 </div>
               </div>
             ))}

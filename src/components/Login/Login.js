@@ -1,85 +1,95 @@
-import React, { useState, useEffect } from "react";
-import basestyle from "../Base.module.css";
-import loginstyle from "./Login.module.css";
-import axios from "axios";
-import { useNavigate, NavLink } from "react-router-dom";
-const Login = ({ setUserState }) => {
-  const navigate = useNavigate();
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [user, setUserDetails] = useState({
-    email: "",
-    password: "",
-  });
+import React, { useState } from "react";
+import "./style2.css";
 
-  const changeHandler = (e) => {
-    const { name, value } = e.target;
-    setUserDetails({
-      ...user,
-      [name]: value,
-    });
-  };
-  const validateForm = (values) => {
-    const error = {};
-    const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.email) {
-      error.email = "Email is required";
-    } else if (!regex.test(values.email)) {
-      error.email = "Please enter a valid email address";
-    }
-    if (!values.password) {
-      error.password = "Password is required";
-    }
-    return error;
+const Login = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleRegisterClick = () => {
+    setIsLogin(false);
   };
 
-  const loginHandler = (e) => {
-    e.preventDefault();
-    setFormErrors(validateForm(user));
-    setIsSubmit(true);
-    // if (!formErrors) {
-
-    // }
+  const handleLoginClick = () => {
+    setIsLogin(true);
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(user);
-      axios.post("http://localhost:9002/login", user).then((res) => {
-        alert(res.data.message);
-        setUserState(res.data.user);
-        navigate("/", { replace: true });
-      });
-    }
-  }, [formErrors]);
   return (
-    <div className={loginstyle.login}>
-      <form>
-        <h1>Login</h1>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          onChange={changeHandler}
-          value={user.email}
-        />
-        <p className={basestyle.error}>{formErrors.email}</p>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          onChange={changeHandler}
-          value={user.password}
-        />
-        <p className={basestyle.error}>{formErrors.password}</p>
-        <button className={basestyle.button_common} onClick={loginHandler}>
-          Login
-        </button>
-      </form>
-      <NavLink to="/signup">Not yet registered? Register Now</NavLink>
+    <div className={`container ${isLogin ? "" : "right-panel-active"}`}>
+      <div className="form-container register-container">
+        <form>
+          <h1>Register</h1>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Register</button>
+          <span>or use your account</span>
+          <div className="social-container">
+            <a href="#" className="social">
+              <i className="lni lni-facebook-fill"></i>
+            </a>
+            <a href="#" className="social">
+              <i className="lni lni-google"></i>
+            </a>
+            <a href="#" className="social">
+              <i className="lni lni-linkedin-original"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div className="form-container login-container">
+        <form>
+          <h1>Login</h1>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <div className="content">
+            <div className="checkbox">
+              <input type="checkbox" name="checkbox" id="checkbox" />
+              <label>Remember me</label>
+            </div>
+            <div className="pass-link">
+              <a href="#">Forgot password?</a>
+            </div>
+          </div>
+          <button>Login</button>
+          <span>or use your account</span>
+          <div className="social-container">
+            <a href="#" className="social">
+              <i className="lni lni-facebook-fill"></i>
+            </a>
+            <a href="#" className="social">
+              <i className="lni lni-google"></i>
+            </a>
+            <a href="#" className="social">
+              <i className="lni lni-linkedin-original"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-panel overlay-left">
+            <h1 className="title">Hello!</h1>
+            <p>if you have an account, login here </p>
+            <button className="ghost" onClick={handleLoginClick}>
+              Login
+              <i className="lni lni-arrow-left login"></i>
+            </button>
+          </div>
+          <div className="overlay-panel overlay-right">
+            <h1 className="title">Start your journey now</h1>
+            <p>
+              if you don't have an account yet, join us and start your journey.
+            </p>
+            <button className="ghost" onClick={handleRegisterClick}>
+              Register
+              <i className="lni lni-arrow-right register"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
+
 export default Login;
